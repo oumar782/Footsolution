@@ -1,0 +1,85 @@
+/* Styles généraux */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Styles du header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    background-color: transparent; /* Arrière-plan transparent */
+    z-index: 1000;
+    transition: all 0.3s ease; /* Transition fluide */
+}
+
+.header.scrolled {
+    background-color: rgba(0, 0, 0, 0.8); /* Fond sombre lors du scroll */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 60px; /* Ajustez la taille selon votre logo */
+    width: auto;
+    transition: filter 0.3s ease;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    color: white; /* Texte blanc pour contraster avec l'arrière-plan transparent */
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #007bff; /* Bleu au survol */
+}
+
+/* Effets lors du scroll */
+.header.scrolled .logo-image {
+    filter: brightness(1); /* Logo reste visible */
+}
+
+.header.scrolled .nav-links li a {
+    color: white; /* Les liens restent blancs */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
