@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ArrowRight, Calendar, Clock, Users } from "lucide-react";
-import "../style/Hero.css";
+import "../heros/Hero.css";
 
 export default function Hero() {
   const [isHovered, setIsHovered] = useState(false);
