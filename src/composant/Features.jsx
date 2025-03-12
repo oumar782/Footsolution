@@ -49,9 +49,9 @@ export default function Features() {
 
   return (
     <section id="features" className="features-section">
-      <div className="container">
-        <div className="header">
-          <div className="badge">Fonctionnalités</div>
+      <div className="containerss">
+        <div className="headerss">
+          <div className="badget">Fonctionnalités</div>
           <h2>Tout ce dont vous avez besoin pour gérer vos terrains</h2>
           <p>
             FootspaceReserve combine des outils puissants et une interface intuitive pour optimiser la gestion de vos

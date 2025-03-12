@@ -106,14 +106,14 @@ const Personnalisable = () => {
   ];
 
   return (
-    <section style={{ backgroundColor: "#f8f9fa", padding: "4rem 1rem" }}>
+    <section style={{ backgroundColor: "white", padding: "4rem 1rem" }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         {/* En-tête */}
         <div style={{ textAlign: "center", marginBottom: "3rem" }}>
           <div
             style={{
               display: "inline-block",
-              backgroundColor: "#3b82f6",
+              backgroundColor: "green",
               color: "white",
               padding: "0.5rem 1.5rem",
               borderRadius: "2rem",
@@ -235,7 +235,7 @@ const Personnalisable = () => {
             <h3 style={{ fontSize: "1.5rem", fontWeight: "600", marginBottom: "1.5rem", color: "#1e293b" }}>
               Options de personnalisation
             </h3>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "1.5rem" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "1.5rem"  }}>
               {customizationOptions.map((option, index) => (
                 <div
                   key={index}
@@ -268,7 +268,7 @@ const Personnalisable = () => {
                         fontWeight: "500",
                       }}
                     >
-                      {option.price === 0 ? "Gratuit" : `${option.price}€ / mois`}
+                      {option.price === 0 ? "Gratuit" : `${option.price}€ `}
                     </div>
                   </div>
                   <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>

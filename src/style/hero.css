@@ -1,319 +1,465 @@
-/* Animation d'entrée */
-@keyframes fadeSlideIn {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Animation de la carte de calendrier au survol */
-@keyframes fadeInScale {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Dégradé animé pour la section hero */
-@keyframes gradientAnimation {
-  0% {
-    background: linear-gradient(135deg,rgb(250, 250, 251), #16213e);
-  }
-  50% {
-    background: linear-gradient(135deg, rgb(3, 53, 17), rgb(59, 58, 58));
-  }
-  100% {
-    background: linear-gradient(135deg, GREEN, white);
-  }
-}
-
 .hero-section {
   position: relative;
-  padding: 80px;
-  background: linear-gradient(135deg, #1a1a2e, #16213e);
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 50vh;
-  width: 100%;
-  animation: gradientAnimation 5s ease infinite; /* Dégradé animé */
+  overflow: hidden;
+  background: linear-gradient(
+    180deg, /* Direction du dégradé (du haut vers le bas) */
+    rgba(0, 0, 0, 0.3) 0%, /* Noir avec transparence (30% d'opacité) */
+    rgba(255, 255, 255, 0.3) 100% /* Blanc avec transparence (30% d'opacité) */
+  );
+  padding: 4rem 0;
 }
-
 .container {
-  width: 100%;
+  width: 90%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
-.grid-container {
+.grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  align-items: center;
+  gap: 2rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
 .text-content h1 {
   font-size: 2.5rem;
   font-weight: bold;
-  margin-bottom: 20px;
-  animation: fadeSlideIn 1s ease-out;
+  margin-bottom: 1rem;
+  color:blue;
 }
 
-.text-content .primary {
-  color: #ff9f1c;
-}
-
-@keyframes typing {
-  0% {
-    clip-path: inset(0 100% 0 0);
-  }
-  50% {
-    clip-path: inset(0 0 0 0);
-  }
-  100% {
-    clip-path: inset(0 100% 0 0);
-  }
-}
-
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
+.primary-text {
+  color: blue;
 }
 
 .text-content p {
-  font-size: 1.2rem;
+  color: black;
+  max-width: 600px;
+  font-size: 1.125rem;
   line-height: 1.6;
-  margin-bottom: 20px;
-  animation: fadeSlideIn 1.2s ease-out, typing 6s steps(40, end) infinite, blink 0.75s step-end infinite;
-  overflow: hidden;
-  position: relative;
-  border-right: 2px solid #ff9f1c;
-}
-.buttons {
-  display: flex;
-  gap: 15px;
-  animation: fadeSlideIn 1.4s ease-out;
 }
 
-.primary-button,
-.outline-button {
-  padding: 12px 20px;
-  border-radius: 5px;
-  font-size: 1rem;
-  font-weight: bold;
-  text-decoration: none;
+.buttons {
   display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-flex;
   align-items: center;
-  gap: 5px;
-  transition: transform 0.3s ease; /* Uniformisation des transitions */
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .primary-button {
-  background: #ff9f1c;
-  color: #1a1a2e;
-}
-
-.outline-button {
-  border: 2px solid rgb(3, 71, 22); /* Correction de la syntaxe */
-  color: rgb(4, 58, 18);
-  background: transparent;
+  background-color: #3b82f6;
+  color: white;
 }
 
 .primary-button:hover {
-  background-color: rgb(5, 67, 32);
-  transform: translateY(-5px);
+  background-color: #2563eb;
+  transform: translateY(-2px);
+}
+
+.outline-button {
+  border: 2px solid #3b82f6;
+  color: #3b82f6;
+  background-color: transparent;
 }
 
 .outline-button:hover {
-  border-color: green;
-  color: green;
-  transform: translateY(-5px);
-}
-
-.reserve-button:hover {
-  background: #ff6b6b;
+  background-color: #3b82f6;
   color: white;
-  transform: translateY(-5px);
 }
 
-.calendar-container {
-  position: relative;
+.arrow-icon {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.primary-button:hover .arrow-icon {
+  transform: translateX(4px);
+}
+
+/* Card Section */
+.card-container {
+  margin: 0 auto;
+  aspect-ratio: 16/9;
   overflow: hidden;
-  animation: fadeSlideIn 1.6s ease-out;
+  border-radius: 1rem;
+  border: 1px solid #e5e7eb;
+  background-color: white;
+  height:500px;
+  width:500px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-left:40px;
 }
 
-.calendar-background {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 10px;
-  backdrop-filter: blur(10px);
-  animation: fadeInScale 0.8s ease-out; /* Animation de l'apparition */
+.card-background {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, #eff6ff, #e0e7ff);
 }
 
-.calendar-card {
-  background: #ffffff;
-  color: #1a1a2e;
-  padding: 20px;
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: fadeInScale 0.8s ease-out;
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 400px;
+  background-color: white;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.7s ease;
 }
 
-.calendar-card.hovered {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.card.hovered {
+  transform: translate(-50%, -50%) scale(1.05);
 }
 
 .card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
-.days-grid {
+.card-header h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.calendar-icon {
+  color: #3b82f6;
+}
+
+.calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 10px;
-  margin-top: 10px;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
-.day-cell {
-  text-align: center;
-  padding: 10px;
-  border-radius: 5px;
-  transition: transform 0.2s ease, background 0.3s ease;
-}
-
-.day-cell:hover {
-  background: #ff9f1c;
-  color: #fff;
-  cursor: pointer;
-  transform: translateY(-5px);
-}
-
-.muted-bg {
-  background: #e0e0e0;
+.day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
 }
 
 .primary-bg {
-  background: #ff9f1c;
+  background-color: #3b82f6;
   color: white;
 }
 
 .orange-bg {
-  background: #ff6b6b;
+  background-color: #f97316;
   color: white;
 }
 
-.time-slots {
-  margin-top: 20px;
+.muted-bg {
+  background-color: #f3f4f6;
+  color: #6b7280;
 }
 
-.time-slot {
+.time-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.slot {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 10px;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.primary-bg-light {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.icon {
+  width: 1rem;
+  height: 1rem;
 }
 
 .reserve-button {
   width: 100%;
-  background: #ff9f1c;
-  color: #1a1a2e;
-  padding: 12px;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 5px;
+  padding: 0.75rem;
+  background-color: #3b82f6;
+  color: white;
   border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reserve-button:hover {
+  background-color: #2563eb;
 }
 
 .gradient-overlay {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  right: 0;
+  height: 5rem;
+  background: linear-gradient(to top, #f9fafb, transparent);
 }
 
 /* Responsive Design */
-
-/* For devices with a max-width of 768px (Tablets and smaller screens) */
 @media (max-width: 768px) {
-  .grid-container {
-    grid-template-columns: 1fr;
-    gap: 30px;
+  .hero-section {
+      padding: 2rem 0;
+  }
+
+  .container {
+      width: 95%;
+      padding: 0 0.5rem;
+  }
+
+  .grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
   }
 
   .text-content h1 {
-    font-size: 2rem;
+      font-size: 2rem;
   }
 
   .text-content p {
-    font-size: 1rem;
+      font-size: 1rem;
   }
 
   .buttons {
-    flex-direction: column;
-    gap: 10px;
+      flex-direction: column;
+      gap: 0.5rem;
   }
 
-  .primary-button,
-  .outline-button {
-    width: 100%;
-    padding: 10px 15px;
+  .button {
+      width: 100%;
+      justify-content: center;
+  }
+
+  .card-container {
+      width: 100%;
+      height: auto;
+      margin-left: 0;
+      aspect-ratio: auto;
+  }
+
+  .card {
+      width: 100%;
+      max-width: 100%;
+      padding: 1rem;
+  }
+
+  .card-header h3 {
+      font-size: 1rem;
+  }
+
+  .day {
+      height: 2rem;
+      font-size: 0.75rem;
+  }
+
+  .slot {
+      padding: 0.5rem;
+      font-size: 0.75rem;
+  }
+
+  .reserve-button {
+      font-size: 0.875rem;
   }
 }
 
-/* For devices with a max-width of 480px (Mobile phones) */
-@media (max-width: 480px) {
+@media (min-width: 769px) and (max-width: 1024px) {
   .hero-section {
-    padding: 60px 20px;
-    min-height: 40vh;
+      padding: 3rem 0;
+  }
+
+  .container {
+      width: 90%;
+      padding: 0 1rem;
+  }
+
+  .grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
   }
 
   .text-content h1 {
-    font-size: 1.5rem;
+      font-size: 2.5rem;
   }
 
   .text-content p {
-    font-size: 0.9rem;
+      font-size: 1.125rem;
+  }
+
+  .card-container {
+      width: 80%;
+      height: auto;
+      margin-left: 0;
+      aspect-ratio: auto;
+  }
+
+  .card {
+      width: 90%;
+      max-width: 350px;
+      padding: 1.25rem;
+  }
+
+  .card-header h3 {
+      font-size: 1.125rem;
+  }
+
+  .day {
+      height: 2.25rem;
+      font-size: 0.8125rem;
+  }
+
+  .slot {
+      padding: 0.625rem;
+      font-size: 0.8125rem;
+  }
+
+  .reserve-button {
+      font-size: 0.9375rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .hero-section {
+      padding: 4rem 0;
+  }
+
+  .container {
+      width: 90%;
+      max-width: 1200px;
+      padding: 0 1rem;
+  }
+
+  .grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+  }
+
+  .text-content h1 {
+      font-size: 3.5rem;
+  }
+
+  .text-content p {
+      font-size: 1.25rem;
+  }
+
+  .card-container {
+      width: 500px;
+      height: 500px;
+      margin-left: 40px;
+      aspect-ratio: 16/9;
+  }
+
+  .card {
+      width: 90%;
+      max-width: 400px;
+      padding: 1.5rem;
+  }
+
+  .card-header h3 {
+      font-size: 1.25rem;
+  }
+
+  .day {
+      height: 2.5rem;
+      font-size: 0.875rem;
+  }
+
+  .slot {
+      padding: 0.75rem;
+      font-size: 0.875rem;
+  }
+
+  .reserve-button {
+      font-size: 1rem;
+  }
+}
+/* Flex and Grid Adjustments */
+@media (max-width: 768px) {
+  .content {
+      gap: 1rem;
   }
 
   .buttons {
-    flex-direction: column;
-    gap: 8px;
+      flex-direction: column;
   }
 
-  .primary-button,
-  .outline-button {
-    padding: 8px 15px;
-    font-size: 0.9rem;
+  .button {
+      width: 100%;
   }
 
-  .calendar-container {
-    padding: 10px;
+  .card-container {
+      margin: 0 auto;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .content {
+      gap: 1.25rem;
   }
 
-  .calendar-card {
-    padding: 15px;
+  .buttons {
+      gap: 0.75rem;
   }
 
-  .calendar-background {
-    padding: 15px;
+  .card-container {
+      margin: 0 auto;
+  }
+}
+
+@media (min-width: 1025px) {
+  .content {
+      gap: 1.5rem;
+  }
+
+  .buttons {
+      gap: 1rem;
+  }
+
+  .card-container {
+      margin-left: 40px;
+  }
+}
+/* Image and Background Optimization */
+.card-background {
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 768px) {
+  .card-background {
+      background-size: contain;
   }
 }

@@ -1,0 +1,198 @@
+.homepage {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Vidéo de fond */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.video-background video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+}
+
+/* Contenu principal */
+.homepage .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  padding: 20px;
+  z-index: 10;
+}
+
+/* Titre principal */
+.homepage .content h1 {
+  color: whitesmoke;
+  text-shadow: 2px 2px 6px rgba(0, 255, 0, 0.5);
+  font-size: clamp(2rem, 8vw, 4rem); /* Taille de police fluide */
+  white-space: nowrap;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* Texte sous le titre */
+.homepage .content .textss p {
+  font-size: clamp(1rem, 2vw, 1.2rem); /* Taille de police fluide */
+  color: #eeeeee;
+  line-height: 1.8;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  max-width: 800px; /* Largeur maximale pour une meilleure lisibilité */
+  margin: 0 auto; /* Centrage horizontal */
+  margin-top: 1rem;
+}
+
+/* Liens principaux */
+.content a {
+  color: whitesmoke;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: clamp(0.8rem, 2vw, 1rem); /* Taille de police fluide */
+  margin: 10px;
+  padding: 12px 24px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: 0.4s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+.content a:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px); /* Effet de levée au survol */
+}
+
+/* Section des boutons "Nos Services" et "Contact" */
+.ok {
+  display: flex;
+  gap: 20px;
+  margin-top: 2rem;
+  flex-wrap: wrap; /* Permet aux boutons de passer à la ligne sur les petits écrans */
+  justify-content: center;
+}
+
+/* Section des icônes sociales */
+.oui {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 2rem;
+}
+
+.oui a img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.oui a img:hover {
+  transform: scale(1.2);
+  box-shadow: 0 5px 15px rgba(0, 128, 0, 0.5);
+}
+
+/* Machine à écrire */
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 2px solid #3b82f6;
+  white-space: nowrap;
+  color: whitesmoke;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
+  text-shadow: 0px 6px 6px rgba(0, 255, 0, 0.5);
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #3b82f6;
+  }
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+  .homepage .content h1 {
+    font-size: clamp(1.5rem, 6vw, 3rem); /* Taille de police ajustée */
+    margin-bottom: 1.5rem;
+  }
+
+  .homepage .content .textss p {
+    padding: 15px;
+    max-width: 90%; /* Largeur maximale réduite pour les petits écrans */
+    margin-top: 1rem;
+  }
+
+  .ok {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .content a {
+    font-size: clamp(0.8rem, 3vw, 1rem);
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .homepage .content h1 {
+    font-size: clamp(1.2rem, 5vw, 2rem); /* Taille de police ajustée */
+  }
+
+  .homepage .content .textss p {
+    font-size: clamp(0.9rem, 3vw, 1rem);
+    padding: 10px;
+    margin-top: 0.5rem;
+  }
+
+  .content a {
+    font-size: clamp(0.7rem, 2.5vw, 0.9rem);
+    padding: 8px 16px;
+  }
+
+  .oui a img {
+    width: 30px;
+    height: 30px;
+  }
+}

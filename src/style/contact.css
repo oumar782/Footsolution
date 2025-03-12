@@ -7,7 +7,7 @@
   
   /* Section de contact */
   .contact-section {
-    background-color: #f8f9fa;
+    background-color: white;
     padding: 4rem 0;
   }
   
@@ -18,7 +18,7 @@
   
   .contact-badge {
     display: inline-block;
-    background-color: #3b82f6;
+    background-color: green;
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
@@ -45,8 +45,9 @@
   /* Carte de formulaire */
   .contact-card {
     background-color: white;
-    border-radius: 0.75rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 3rem;
+    box-shadow: 0 25px 25px rgba(2, 104, 43, 0.1);
+
     overflow: hidden;
     max-width: 600px;
     margin: 0 auto;
@@ -151,7 +152,7 @@
   .contact-form-button {
     width: 100%;
     padding: 0.75rem;
-    background-color: #3b82f6;
+    background-color: green;
     color: white;
     font-size: 0.875rem;
     font-weight: 500;

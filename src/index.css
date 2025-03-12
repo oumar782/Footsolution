@@ -21,14 +21,103 @@ a {
 a:hover {
   color: #535bf2;
 }
-
-body {
-  margin: 0;
+/* Style global pour le header */
+.header {
+  background-color: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ajoute une légère ombre sous le header */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
 }
+
+
+/* Menu de navigation desktop */
+.desktop-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem; /* Espacement entre les éléments */
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+/* Menu mobile */
+.mobile-nav {
+  display: none;
+}
+
+.mobile-menu-button {
+  display: none; /* Masque le bouton mobile par défaut */
+}
+
+@media screen and (max-width: 768px) {
+  .desktop-nav {
+    display: none; /* Cache le menu desktop */
+  }
+
+  .mobile-menu-button {
+    display: block; /* Affiche le bouton du menu mobile */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .mobile-nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding-top: 60px;
+    display: none;
+  }
+
+  .mobile-nav.open {
+    display: block; /* Affiche le menu mobile lorsqu'il est ouvert */
+  }
+
+  .mobile-nav-links {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .mobile-nav-links li {
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .mobile-nav-links .nav-link {
+    color: white;
+    font-size: 1.5rem;
+  }
+}
+
 
 h1 {
   font-size: 3.2em;

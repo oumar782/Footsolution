@@ -7,15 +7,16 @@
   }
   
   /* Conteneur principal */
-  .container {
+  .containerz {
     max-width: 1200px;
     margin: 0 auto;
+    margin-left:10px;
   }
   
   /* En-tête */
-  .header .badge {
+  .headerz .badgez {
     display: inline-block;
-    background-color: #007bff;
+    background-color: green;
     color: white;
     padding: 5px 15px;
     border-radius: 20px;
@@ -120,7 +121,7 @@
     background: white;
     padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 55px 55px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
@@ -210,7 +211,8 @@
   }
   
   .primary-button {
-    background-color: #007bff;
+    background-color: green;
+
     color: white;
     padding: 10px 15px;
     border-radius: 5px;
@@ -223,13 +225,13 @@
   }
   
   .primary-button:hover {
-    background-color: #0056b3;
+    background-color: darkblue;
   }
   
   .outline-button {
     background: none;
     border: 2px solid #007bff;
-    color: #007bff;
+    color: green;
     padding: 10px 15px;
     border-radius: 5px;
     font-size: 16px;

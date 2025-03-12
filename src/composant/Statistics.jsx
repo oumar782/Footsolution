@@ -43,9 +43,9 @@ export default function Statistics() {
 
   return (
     <section className="statistics-section">
-      <div className="container">
-        <div className="header">
-          <div className="badge">Résultats</div>
+      <div className="containert">
+        <div className="headert">
+          <div className="badget">Résultats</div>
           <h2>Optimisez vos performances</h2>
           <p>Suivez et améliorez vos indicateurs clés grâce à nos tableaux de bord analytiques.</p>
         </div>

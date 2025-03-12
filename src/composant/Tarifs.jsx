@@ -61,9 +61,9 @@ export default function Pricing() {
 
   return (
     <section id="pricing" className="pricing-section">
-      <div className="container">
-        <div className="header">
-          <div className="badge">Tarifs</div>
+      <div className="containerz">
+        <div className="headerz">
+          <div className="badgez">Tarifs</div>
           <h2>Des forfaits adaptés à vos besoins</h2>
           <p>Choisissez la formule qui correspond le mieux à la taille de votre structure.</p>
         </div>
@@ -120,7 +120,7 @@ export default function Pricing() {
               </div>
 
               <div className="card-footer">
-                <button className={plan.popular ? "primary-button" : "outline-button"}>Commencer</button>
+                <button className={plan.popular ? "primary-button" : "outline-button"}>Commander</button>
               </div>
             </div>
           ))}
