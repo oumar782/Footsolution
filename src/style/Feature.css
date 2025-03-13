@@ -2,6 +2,7 @@
 .features-section {
   background-color: #f9fafb;
   padding: 4rem 0;
+
 }
 
 .containerss {
@@ -105,5 +106,44 @@ h3 {
 @media (min-width: 1024px) {
   .features-grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+}
+/* Carte contenant le calendrier */
+.card-container {
+  margin: 0 auto;
+  width: 100%; /* Prend toute la largeur sur les petits écrans */
+  max-width: 500px; /* Limite la largeur maximale */
+  aspect-ratio: 16/9; /* Proportion adaptée */
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid #e5e7eb;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.02); /* Effet de survol */
+}
+
+/* Responsive pour la carte */
+@media (max-width: 768px) {
+  .card-container {
+    aspect-ratio: auto; /* Désactive la proportion fixe */
+    height: auto; /* Hauteur automatique */
+  }
+
+  .card {
+    padding: 0.75rem; /* Réduit le padding */
   }
 }
