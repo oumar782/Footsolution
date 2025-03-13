@@ -106,7 +106,7 @@ const Personnalisable = () => {
   ];
 
   return (
-    <section style={{ backgroundColor: "white", padding: "4rem 1rem" }}>
+    <section style={{ backgroundColor: "white", padding: "6rem 1rem" }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         {/* En-tête */}
         <div style={{ textAlign: "center", marginBottom: "3rem" }}>
@@ -129,7 +129,7 @@ const Personnalisable = () => {
             Adaptez l'application à votre image
           </h2>
           <p style={{ color: "#64748b", fontSize: "1.125rem", maxWidth: "800px", margin: "0 auto", lineHeight: "1.6" }}>
-            FootspaceReserve s'adapte à votre identité visuelle pour offrir une expérience cohérente à vos clients.
+            Footspace Solutions s'adapte à votre identité visuelle pour offrir une expérience cohérente à vos clients.
           </p>
         </div>
 

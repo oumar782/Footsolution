@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="containersss">
         <div className="footer-grid">
           <div className="footer-section">
-            <h3>FootspaceReserve</h3>
+            <h3>Footspace Solutions</h3>
             <p>
               La solution complète pour la gestion et la réservation de vos terrains de football.
             </p>
@@ -52,21 +52,21 @@ export default function Footer() {
             <ul className="footer-links">
               <li style={{ color: 'white' }}>
                 <i className="icon-map-pin"></i>
-                <p>123 Avenue des Sports, 75001 Paris, France</p>
+                <p>rue de bethune, Casablanca,Maroc </p>
               </li>
               <li>
                 <i className="icon-phone" style={{ color: 'white' }}></i>
-                <p>01 23 45 67 89</p>
+                <p>+212 0721976288/0688112830</p>
               </li>
               <li>
                 <i className="icon-mail"></i>
-                <p>contact@footspacereserve.com</p>
+                <p>contact@footspacesolutions.com</p>
               </li>
             </ul>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>© 2025 FootspaceReserve. Tous droits réservés.</p>
+          <p>© 2025 Footspace Solutions. Tous droits réservés.</p>
           <div className="footer-legal-links">
             <a href="#">Conditions d'utilisation</a>
             <a href="#">Politique de confidentialité</a>

@@ -55,7 +55,7 @@ export default function Features() {
           <div className="badget">Fonctionnalités</div>
           <h2>Tout ce dont vous avez besoin pour gérer vos terrains</h2>
           <p>
-            FootspaceReserve combine des outils puissants et une interface intuitive pour optimiser la gestion de vos
+            Footspace Solutions combine des outils puissants et une interface intuitive pour optimiser la gestion de vos
             terrains de football.
           </p>
         </div>

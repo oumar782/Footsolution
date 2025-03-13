@@ -64,7 +64,7 @@ export default function Statistics() {
 
         <div className="chart-container">
           <div className="tabs-header">
-            <h3> L'evolution des performances de votre entreprise avec <span>FootSpaceReserve</span></h3>
+            <h3> L'evolution des performances de votre entreprise avec <span>FootSpace Solutions</span></h3>
             <div className="tabs-list">
               <button onClick={() => setActiveTab("weekly")} className={activeTab === "weekly" ? "active" : ""}>
                 Hebdomadaire

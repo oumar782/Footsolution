@@ -1,7 +1,8 @@
 /* Features Section */
 .features-section {
   background-color: #f9fafb;
-  padding: 4rem 0;
+  padding: 6rem 20px; /* Réduit l'espacement sur les petits écrans */
+  
 }
 
 .containerss {

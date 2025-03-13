@@ -9,7 +9,7 @@ export default function Hero() {
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
 
-  const texts = ["FootspaceReserve.", "Gestion de terrains.", "Réservation en ligne."];
+  const texts = ["Footspace Solutions", "Gestion de terrains.", "Réservation en ligne."];
 
   useEffect(() => {
     const handleType = () => {
@@ -45,7 +45,7 @@ export default function Hero() {
                 <span className="cursors">|</span>
               </h1>
               <p>
-                Optimisez la gestion de vos terrains de football avec notre solution de réservation en ligne. Augmentez
+                Optimisez la gestion de vos terrains de football avec notre solution informatique de réservation en ligne. Augmentez
                 vos revenus et simplifiez l&apos;expérience de vos clients.
               </p>
             </div>

@@ -1,7 +1,7 @@
 /* Section globale */
 .pricing-section {
   background-color: white;
-  padding: 40px 20px; /* Réduit l'espacement sur les petits écrans */
+  padding: 6rem 20px; /* Réduit l'espacement sur les petits écrans */
   text-align: center;
 }
 
