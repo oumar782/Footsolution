@@ -10,9 +10,12 @@ const ImageSlider = () => {
   const [typingSpeed, setTypingSpeed] = useState(150);
 
   const texts = [
-    "Révolutionnez la gestion de vos terrains de football avec FootSpace Solutions",
-    "Simplifiez la réservation, optimisez vos créneaux horaires",
-    "Maximisez vos revenus avec une expérience moderne et fluide",
+    "Révolutionnez la gestion de vos terrains",
+    "Simplifiez la réservation avec FootSpace",
+    "Optimisez vos créneaux horaires.",
+    "Maximisez vos revenus.",
+    "Offrez une expérience moderne.",
+    "Profitez d'une interface fluide.",
   ];
 
   useEffect(() => {
@@ -53,8 +56,7 @@ const ImageSlider = () => {
             <span className="cursor">|</span>
           </h1>
           <p>
-            Simplifiez la réservation, optimisez vos créneaux horaires, et maximisez vos revenus, tout en offrant à vos
-            clients une expérience moderne et fluide.
+          Révolutionnez la gestion de vos terrains de football avec FootSpace Solutions. Simplifiez la réservation, optimisez vos créneaux et maximisez vos revenus, tout en offrant à vos clients une expérience moderne et fluide
           </p>
         </div>
         <div className="ok">

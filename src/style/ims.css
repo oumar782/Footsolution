@@ -46,7 +46,7 @@
 .homepage .content h1 {
   color: whitesmoke;
   text-shadow: 2px 2px 6px rgba(0, 255, 0, 0.5);
-  font-size: clamp(2rem, 8vw, 4rem); /* Taille de police fluide */
+  font-size: clamp(2rem, 7vw, 2rem); /* Taille de police fluide */
   white-space: nowrap;
   margin-bottom: 2rem;
   position: relative;
@@ -131,7 +131,152 @@
   animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
   text-shadow: 0px 6px 6px rgba(0, 255, 0, 0.5);
 }
+/* RESPONSIVITÉ GLOBALE */
 
+.homepage {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Vidéo de fond */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.video-background video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+}
+
+/* Contenu principal */
+.homepage .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  padding: 20px;
+  z-index: 10;
+  max-width: 90%; /* Limite la largeur maximale pour éviter le débordement */
+  margin: 0 auto; /* Centrage horizontal */
+}
+
+/* Titre principal */
+.homepage .content h1 {
+  color: whitesmoke;
+  text-shadow: 2px 2px 6px rgba(0, 255, 0, 0.5);
+  font-size: clamp(1.5rem, 5vw, 2.5rem); /* Taille fluide pour s'adapter aux écrans */
+  white-space: normal; /* Permet le retour à la ligne si nécessaire */
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 10;
+  line-height: 1.2; /* Espacement entre les lignes pour éviter les chevauchements */
+}
+
+/* Texte sous le titre */
+.homepage .content .textss p {
+  font-size: clamp(0.8rem, 2vw, 1.2rem); /* Taille fluide pour s'adapter aux écrans */
+  color: #eeeeee;
+  line-height: 1.8;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  max-width: 100%; /* S'adapte à la largeur de l'écran */
+  margin: 0 auto; /* Centrage horizontal */
+  margin-top: 1rem;
+  word-wrap: break-word; /* Force le retour à la ligne si nécessaire */
+}
+
+/* Liens principaux */
+.content a {
+  color: whitesmoke;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: clamp(0.7rem, 2vw, 1rem); /* Taille fluide pour s'adapter aux écrans */
+  margin: 10px;
+  padding: 10px 20px; /* Padding ajusté pour les petits écrans */
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: 0.4s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  white-space: nowrap; /* Empêche le texte des boutons de passer à la ligne */
+}
+
+.content a:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px); /* Effet de levée au survol */
+}
+
+/* Section des boutons "Nos Services" et "Contact" */
+.ok {
+  display: flex;
+  gap: 15px;
+  margin-top: 1.5rem;
+  flex-wrap: wrap; /* Permet aux boutons de passer à la ligne sur les petits écrans */
+  justify-content: center;
+}
+
+/* Section des icônes sociales */
+.oui {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 1.5rem;
+  flex-wrap: wrap; /* Permet aux icônes de passer à la ligne si nécessaire */
+}
+
+.oui a img {
+  width: clamp(30px, 5vw, 40px); /* Taille fluide pour s'adapter aux écrans */
+  height: clamp(30px, 5vw, 40px);
+  border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.oui a img:hover {
+  transform: scale(1.2);
+  box-shadow: 0 5px 15px rgba(0, 128, 0, 0.5);
+}
+
+/* Machine à écrire */
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 2px solid #3b82f6;
+  white-space: nowrap;
+  color: whitesmoke;
+  margin: 0 auto;
+  letter-spacing: 0.1em;
+  animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
+  text-shadow: 0px 6px 6px rgba(0, 255, 0, 0.5);
+  font-size: clamp(1rem, 3vw, 1.5rem); /* Taille fluide pour s'adapter aux écrans */
+  max-width: 100%; /* S'adapte à la largeur de l'écran */
+  word-wrap: break-word; /* Force le retour à la ligne si nécessaire */
+}
+
+/* Animations */
 @keyframes typing {
   from {
     width: 0;
@@ -142,57 +287,7 @@
 }
 
 @keyframes blink {
-  from,
-  to {
-    border-color: transparent;
-  }
   50% {
-    border-color: #3b82f6;
-  }
-}
-
-/* Responsivité */
-@media (max-width: 768px) {
-  .homepage .content h1 {
-    font-size: clamp(1.5rem, 6vw, 3rem); /* Taille de police ajustée */
-    margin-bottom: 1.5rem;
-  }
-
-  .homepage .content .textss p {
-    padding: 15px;
-    max-width: 90%; /* Largeur maximale réduite pour les petits écrans */
-    margin-top: 1rem;
-  }
-
-  .ok {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .content a {
-    font-size: clamp(0.8rem, 3vw, 1rem);
-    padding: 10px 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .homepage .content h1 {
-    font-size: clamp(1.2rem, 5vw, 2rem); /* Taille de police ajustée */
-  }
-
-  .homepage .content .textss p {
-    font-size: clamp(0.9rem, 3vw, 1rem);
-    padding: 10px;
-    margin-top: 0.5rem;
-  }
-
-  .content a {
-    font-size: clamp(0.7rem, 2.5vw, 0.9rem);
-    padding: 8px 16px;
-  }
-
-  .oui a img {
-    width: 30px;
-    height: 30px;
+    border-color: transparent;
   }
 }
