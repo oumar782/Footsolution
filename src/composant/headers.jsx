@@ -7,6 +7,7 @@ import "../style/Header.css"; // Importez le fichier CSS
 const headers = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768); // Détecte si l'écran est en mode mobile
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,8 +18,17 @@ const headers = () => {
       }
     };
 
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // Mettre à jour l'état en fonction de la largeur de l'écran
+    };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const toggleMobileMenu = () => {
@@ -37,7 +47,7 @@ const headers = () => {
             style={{
               fontFamily: "'Montserrat', sans-serif",
               fontWeight: "bold",
-              fontSize: "24px",
+              fontSize: isMobile ? "18px" : "24px", // Taille de police réduite en mode mobile
               marginLeft: "10px",
               display: "flex",
               gap: "8px", // Espacement entre les mots
