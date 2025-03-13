@@ -2,7 +2,6 @@
 .features-section {
   background-color: #f9fafb;
   padding: 4rem 0;
-
 }
 
 .containerss {
@@ -15,8 +14,7 @@
 .headerss {
   text-align: center;
   margin-bottom: 3rem;
-  margin-left:45px;
-
+  margin-left: 0; /* Suppression de la marge gauche */
 }
 
 .tags {
@@ -34,7 +32,7 @@ h2 {
   font-weight: bold;
   margin-bottom: 1rem;
   text-shadow: 2px 2px 4px rgba(152, 251, 152, 0.5);
-margin-left:-45px
+  margin-left: 0; /* Suppression de la marge gauche */
 }
 
 p {
@@ -42,6 +40,7 @@ p {
   max-width: 900px;
   margin: 0 auto;
   font-size: 1.125rem;
+  line-height: 1.6; /* Améliore la lisibilité */
 }
 
 /* Features Grid */
@@ -62,7 +61,6 @@ p {
   border-radius: 0.5rem;
   transition: box-shadow 0.3s ease;
   box-shadow: 0 20px 20px rgba(0, 255, 0, 0.1); /* Ombre verte avec 10% d'opacité */
-
 }
 
 .feature-card:hover {
@@ -89,26 +87,40 @@ h3 {
 }
 
 /* Responsive Design */
-@media (min-width: 768px) {
+@media (min-width: 480px) {
   .features-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes pour les écrans moyens */
   }
 
   h2 {
-    font-size: 3rem;
+    font-size: 2.5rem; /* Taille de police légèrement augmentée */
   }
 
   p {
-    font-size: 1.25rem;
+    font-size: 1rem; /* Taille de police ajustée */
+  }
+}
+
+@media (min-width: 768px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes pour les tablettes */
+  }
+
+  h2 {
+    font-size: 3rem; /* Taille de police augmentée */
+  }
+
+  p {
+    font-size: 1.25rem; /* Taille de police augmentée */
   }
 }
 
 @media (min-width: 1024px) {
   .features-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* 4 colonnes pour les grands écrans */
   }
-
 }
+
 /* Carte contenant le calendrier */
 .card-container {
   margin: 0 auto;
