@@ -28,10 +28,24 @@ const headers = () => {
   return (
     <header className={`header ${isScrolled ? "scrolled" : ""}`}>
       <div className="container">
-        <div className="logo">
+        <div className="logo" style={{ display: "flex", alignItems: "center" }}>
           <Link to="/">
             <img src={logo} alt="Logo" className="logo-image" />
           </Link>
+          {/* Titre à côté du logo */}
+          <h1
+            style={{
+              fontFamily: "'Montserrat', sans-serif",
+              fontWeight: "bold",
+              fontSize: "24px",
+              marginLeft: "10px",
+              display: "flex",
+              gap: "8px", // Espacement entre les mots
+            }}
+          >
+            <span style={{ textShadow: "1px 1px 0px rgb(252, 254, 253)" }}>FootSpace</span>
+            <span style={{ textShadow: "2px 2px 0px rgb(223, 231, 224)" }}>Solutions</span>
+          </h1>
         </div>
 
         {/* Menu pour les écrans larges */}
