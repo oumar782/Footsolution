@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react"; // Ajouter React ici
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import { Tabs } from '@radix-ui/react-tabs';
 import "../style/statistics.css";
@@ -87,7 +87,7 @@ export default function Statistics() {
                     <YAxis yAxisId="right" orientation="right" stroke="red" />
                     <Tooltip />
                     <Bar yAxisId="left" dataKey="revenue" name="Revenus (€)" fill="green" />
-                    <Bar yAxisId="right" dataKey="occupancy" name="Taux d'occupation (%)" fill="#black" />
+                    <Bar yAxisId="right" dataKey="occupancy" name="Taux d'occupation (%)" fill="black" />
                   </BarChart>
                 </ResponsiveContainer>
               </div>

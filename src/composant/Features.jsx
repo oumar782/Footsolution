@@ -1,3 +1,4 @@
+import React from "react";
 import { Calendar, Clock, CreditCard, BarChart3, Users, Smartphone, Palette, Shield } from "lucide-react";
 import "../style/Feature.css"; // Assurez-vous que le chemin est correct
 

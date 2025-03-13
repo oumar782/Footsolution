@@ -2,13 +2,13 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
     build: {
+        sourcemap: true, // Activer les sourcemaps
         rollupOptions: {
             output: {
                 manualChunks: {
                     // Diviser les dépendances en chunks séparés
                     react: ['react', 'react-dom'],
-                    reactRouter: ['react-router-dom'],
-                    // Ajoutez d'autres dépendances ici
+                    radix: ['@radix-ui/react-tabs'],
                 },
             },
         },

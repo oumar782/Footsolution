@@ -1,6 +1,4 @@
-"use client";
-
-import { useState } from "react";
+import React, { useState } from "react"; // Ajout de React ici
 import { Check } from "lucide-react";
 import "../style/tarif.css";
 
@@ -69,20 +67,19 @@ export default function Pricing() {
         </div>
 
         <div className="billing-switch">
-  <span className={!isAnnual ? "active" : ""}>Mensuel</span>
-  <label className="switch">
-    <input
-      type="checkbox"
-      checked={isAnnual}
-      onChange={(e) => setIsAnnual(e.target.checked)}
-    />
-    <span className="slider"></span>
-  </label>
-  <span className={isAnnual ? "active" : ""}>
-    Annuel <span className="discount">-20%</span>
-  </span>
-</div>
-
+          <span className={!isAnnual ? "active" : ""}>Mensuel</span>
+          <label className="switch">
+            <input
+              type="checkbox"
+              checked={isAnnual}
+              onChange={(e) => setIsAnnual(e.target.checked)}
+            />
+            <span className="slider"></span>
+          </label>
+          <span className={isAnnual ? "active" : ""}>
+            Annuel <span className="discount">-20%</span>
+          </span>
+        </div>
 
         <div className="plans-grid">
           {plans.map((plan, index) => (
