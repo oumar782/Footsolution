@@ -12,7 +12,7 @@
 
 .header.scrolled {
   background-color: rgba(255, 255, 255, 0.9); /* Fond blanc semi-transparent */
-  box-shadow: 0 12px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  box-shadow: 0 100px 100px rgba(0, 0, 0, 0.5); /* Ombre plus forte et plus étalée */
 }
 
 .container {
@@ -30,8 +30,6 @@
   transition: filter 0.3s ease;
 }
 
-
-
 /* Navigation pour les écrans larges */
 .desktop-nav {
   display: flex;
@@ -47,19 +45,22 @@
 }
 
 .nav-link {
-  color: gray;
+  color: #ffffff; /* Couleur du texte en mode normal (sans défilement) */
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Ombre portée pour améliorer la lisibilité */
 }
 
 .header.scrolled .nav-link {
-  color: #333; /* Couleur du texte en mode scroll */
+  color: #333333; /* Couleur du texte en mode scroll */
+  text-shadow: none; /* Pas besoin d'ombre sur fond blanc */
 }
 
 .nav-link:hover {
   color: green; /* Couleur au survol */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Ombre plus prononcée au survol */
 }
 
 /* Menu hamburger pour les écrans mobiles */
@@ -69,11 +70,13 @@
   border: none;
   cursor: pointer;
   font-size: 1.5rem;
-  color: #fff;
+  color: #ffffff; /* Couleur du bouton en mode normal */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Ombre portée pour le bouton */
 }
 
 .header.scrolled .mobile-menu-button {
-  color: #333; /* Couleur du bouton en mode scroll */
+  color: #333333; /* Couleur du bouton en mode scroll */
+  text-shadow: none; /* Pas besoin d'ombre sur fond blanc */
 }
 
 /* Navigation mobile */
@@ -108,8 +111,9 @@
 }
 
 .mobile-nav-links .nav-link {
-  color: #333;
+  color: #333333; /* Couleur du texte en mode mobile */
   font-size: 1.5rem;
+  text-shadow: none; /* Pas besoin d'ombre sur fond blanc */
 }
 
 /* Responsive Design */
