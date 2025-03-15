@@ -39,7 +39,7 @@ const headers = () => {
     <header className={`header ${isScrolled ? "scrolled" : ""}`}>
       <div className="container">
         <div className="logo" style={{ display: "flex", alignItems: "center" }}>
-          <Link to="/">
+          <Link to="/accueil">
             <img src={logo} alt="Logo" className="logo-image" />
           </Link>
           {/* Titre à côté du logo */}
@@ -47,7 +47,7 @@ const headers = () => {
             style={{
               fontFamily: "'Montserrat', sans-serif",
               fontWeight: "bold",
-              fontSize: isMobile ? "18px" : "24px", // Taille de police réduite en mode mobile
+              fontSize: isMobile ? "10px" : "14px", // Taille de police réduite en mode mobile
               marginLeft: "10px",
               display: "flex",
               gap: "8px", // Espacement entre les mots

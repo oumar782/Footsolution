@@ -137,11 +137,12 @@
   overflow: hidden;
   border-right: 2px solid #3b82f6;
   white-space: nowrap;
-  color: whitesmoke;
-  margin: 0 auto;
+  color: white;
+  margin-top: 90px ;
   letter-spacing: 0.15em;
   animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
   text-shadow: 0px 6px 6px rgba(0, 255, 0, 0.5);
+  font-size: clamp(1.2rem, 2vw, 2rem); /* Taille fluide pour s'adapter aux écrans */
 }
 
 /* Animations */

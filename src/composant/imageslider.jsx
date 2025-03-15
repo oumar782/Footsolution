@@ -10,9 +10,9 @@ const ImageSlider = () => {
   const [typingSpeed, setTypingSpeed] = useState(150);
 
   const texts = [
-    "Révolutionnez la gestion de vos terrains",
-    "Simplifiez la réservation avec FootSpace",
-    "Optimisez vos créneaux horaires.",
+    "Gérez vos terrains efficacement.",
+    "Simplifiez la réservation. ",
+    "Gérez mieux vos créneaux.",
     "Maximisez vos revenus.",
     "Offrez une expérience moderne.",
     "Profitez d'une interface fluide.",

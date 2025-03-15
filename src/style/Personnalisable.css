@@ -14,7 +14,7 @@ body {
 .hero-section {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(255, 255, 255, 0.3) 100%);
+  background: linear-gradient(180deg, rgba(13, 232, 27, 0.3) 0%, rgba(250, 247, 249, 0.91) 100%);
   padding: 4rem 0;
 }
 
@@ -29,6 +29,7 @@ body {
   display: grid;
   gap: 2rem;
   grid-template-columns: 1fr 1fr;
+  align-items: center;
 }
 
 .content {
@@ -42,65 +43,16 @@ body {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  color: blue;
-}
+  color: darkblue; /* Couleur bleue professionnelle */
+  text-shadow: 0px 6px 6px rgba(0, 255, 0, 0.5);
 
-.primary-text {
-  color: blue;
 }
 
 .text-content p {
-  color: black;
+  color:rgb(3, 5, 9); /* Couleur de texte plus douce */
   max-width: 600px;
   font-size: 1.125rem;
   line-height: 1.6;
-}
-
-.buttons {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.button {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  font-weight: 500;
-  text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.primary-button {
-  background-color: #3b82f6;
-  color: white;
-}
-
-.primary-button:hover {
-  background-color: #2563eb;
-  transform: translateY(-2px);
-}
-
-.outline-button {
-  border: 2px solid #3b82f6;
-  color: #3b82f6;
-  background-color: transparent;
-}
-
-.outline-button:hover {
-  background-color: #3b82f6;
-  color: white;
-}
-
-.arrow-icon {
-  margin-left: 0.5rem;
-  transition: transform 0.3s ease;
-}
-
-.primary-button:hover .arrow-icon {
-  transform: translateX(4px);
 }
 
 /* Card Section */
@@ -115,6 +67,12 @@ body {
   width: 500px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-left: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
 .card-background {
@@ -125,21 +83,14 @@ body {
 }
 
 .card {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative; /* Changement ici : position relative au lieu de absolute */
   width: 90%;
   max-width: 400px;
   background-color: white;
   border-radius: 0.75rem;
   padding: 1.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.7s ease;
-}
-
-.card.hovered {
-  transform: translate(-50%, -50%) scale(1.05);
+  margin: 0 auto; /* Centrage de la carte */
 }
 
 .card-header {
@@ -156,14 +107,14 @@ body {
 }
 
 .calendar-icon {
-  color: #3b82f6;
+  color: rgb(11, 5, 81);
 }
 
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 0.25rem;
-  margin-bottom: 0.5rem;
+  gap: 0.5rem; /* Espacement augmenté pour une meilleure lisibilité */
+  margin-bottom: 1rem;
 }
 
 .day {
@@ -174,15 +125,21 @@ body {
   border-radius: 0.5rem;
   font-size: 0.875rem;
   font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Ajout de transition */
 }
 
-.primary-bg {
+.day:hover {
   background-color: #3b82f6;
   color: white;
 }
 
+.primary-bg {
+  background-color:rgb(6, 3, 61);
+  color: white;
+}
+
 .orange-bg {
-  background-color: #f97316;
+  background-color:rgb(4, 62, 15);
   color: white;
 }
 
@@ -204,6 +161,11 @@ body {
   padding: 0.75rem;
   border-radius: 0.5rem;
   font-size: 0.875rem;
+  transition: background-color 0.3s ease; /* Ajout de transition */
+}
+
+.slot:hover {
+  background-color: rgba(59, 130, 246, 0.1); /* Effet de survol */
 }
 
 .primary-bg-light {
@@ -213,25 +175,12 @@ body {
 .icon {
   width: 1rem;
   height: 1rem;
-}
+  background-color: rgba(59, 130, 246, 0.1); /* Effet de survol */
 
-.reserve-button {
-  width: 100%;
-  padding: 0.75rem;
-  background-color: #3b82f6;
-  color: white;
-  border: none;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
 }
-
-.reserve-button:hover {
-  background-color: #2563eb;
+span{
+  color: darkblue;
 }
-
 .gradient-overlay {
   position: absolute;
   bottom: 0;
@@ -247,11 +196,6 @@ body {
     padding: 2rem 0;
   }
 
-  .container {
-    width: 95%;
-    padding: 0 0.5rem;
-  }
-
   .grid {
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -265,45 +209,16 @@ body {
     font-size: 1rem;
   }
 
-  .buttons {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .button {
-    width: 100%;
-    justify-content: center;
-  }
-
   .card-container {
     width: 100%;
     height: auto;
     margin-left: 0;
-    aspect-ratio: auto;
   }
 
   .card {
     width: 100%;
     max-width: 100%;
     padding: 1rem;
-  }
-
-  .card-header h3 {
-    font-size: 1rem;
-  }
-
-  .day {
-    height: 2rem;
-    font-size: 0.75rem;
-  }
-
-  .slot {
-    padding: 0.5rem;
-    font-size: 0.75rem;
-  }
-
-  .reserve-button {
-    font-size: 0.875rem;
   }
 }
 
@@ -312,29 +227,10 @@ body {
     padding: 3rem 0;
   }
 
-  .container {
-    width: 90%;
-    padding: 0 1rem;
-  }
-
-  .grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-  }
-
-  .text-content h1 {
-    font-size: 2.5rem;
-  }
-
-  .text-content p {
-    font-size: 1.125rem;
-  }
-
   .card-container {
     width: 80%;
     height: auto;
     margin-left: 0;
-    aspect-ratio: auto;
   }
 
   .card {
@@ -342,48 +238,11 @@ body {
     max-width: 350px;
     padding: 1.25rem;
   }
-
-  .card-header h3 {
-    font-size: 1.125rem;
-  }
-
-  .day {
-    height: 2.25rem;
-    font-size: 0.8125rem;
-  }
-
-  .slot {
-    padding: 0.625rem;
-    font-size: 0.8125rem;
-  }
-
-  .reserve-button {
-    font-size: 0.9375rem;
-  }
 }
 
 @media (min-width: 1025px) {
   .hero-section {
     padding: 4rem 0;
-  }
-
-  .container {
-    width: 90%;
-    max-width: 1200px;
-    padding: 0 1rem;
-  }
-
-  .grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-  }
-
-  .text-content h1 {
-    font-size: 3.5rem;
-  }
-
-  .text-content p {
-    font-size: 1.25rem;
   }
 
   .card-container {
@@ -397,23 +256,5 @@ body {
     width: 90%;
     max-width: 400px;
     padding: 1.5rem;
-  }
-
-  .card-header h3 {
-    font-size: 1.25rem;
-  }
-
-  .day {
-    height: 2.5rem;
-    font-size: 0.875rem;
-  }
-
-  .slot {
-    padding: 0.75rem;
-    font-size: 0.875rem;
-  }
-
-  .reserve-button {
-    font-size: 1rem;
   }
 }
