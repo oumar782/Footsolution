@@ -12,7 +12,7 @@
 
 .header.scrolled {
   background-color: rgba(255, 255, 255, 0.9); /* Fond blanc semi-transparent */
-  box-shadow: 0 100px 100px rgba(0, 0, 0, 0.5); /* Ombre plus forte et plus étalée */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ombre plus forte et plus étalée */
 }
 
 .container {
@@ -50,12 +50,12 @@
   font-size: 1rem;
   font-weight: 500;
   transition: color 0.3s ease, text-shadow 0.3s ease;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Ombre portée pour améliorer la lisibilité */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Ombre portée plus prononcée */
 }
 
 .header.scrolled .nav-link {
   color: #333333; /* Couleur du texte en mode scroll */
-  text-shadow: none; /* Pas besoin d'ombre sur fond blanc */
+
 }
 
 .nav-link:hover {
