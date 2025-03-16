@@ -10,7 +10,10 @@
   margin: 0 auto;
   padding: 0 10px; /* Ajoute un padding pour éviter les bords coupés */
 }
-
+.price{
+  color:green;
+  font-size:20px;
+}
 /* En-tête */
 .headerz .badgez {
   display: inline-block;
@@ -33,20 +36,23 @@
   color: #666;
 }
 
-/* Switch de facturation */
 .billing-switch {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 30px 0;
-  font-size: clamp(14px, 2vw, 16px);
-  font-weight: bold;
+  gap: 15px;
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  color: #333;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .billing-switch span {
-  cursor: pointer;
-  margin: 0 10px;
-  color: #777;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 .billing-switch span.active {
@@ -55,36 +61,84 @@
 
 .switch {
   position: relative;
-  width: clamp(40px, 6vw, 60px); /* Largeur responsive du switch */
-  height: clamp(20px, 3vw, 30px); /* Hauteur responsive du switch */
-  margin: 0 10px;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
 }
 
-.switch .slider {
-  background-color: #ccc;
-  border-radius: 30px;
-  transition: 0.4s;
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-.switch input:checked + .slider {
-  background-color: #007bff;
-}
-
-.switch .slider:before {
-  content: "";
+.slider {
   position: absolute;
-  height: clamp(16px, 2.5vw, 26px); /* Taille responsive du bouton */
-  width: clamp(16px, 2.5vw, 26px);
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
   left: 4px;
   bottom: 4px;
   background-color: white;
-  border-radius: 50%;
   transition: 0.4s;
+  border-radius: 50%;
 }
 
-.switch input:checked + .slider:before {
-  transform: translateX(clamp(16px, 3vw, 30px)); /* Position responsive */
+input:checked + .slider {
+  background-color: #007bff;
 }
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.discount {
+  font-size: 14px;
+  color: #28a745;
+  margin-left: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .billing-switch {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .billing-switch span {
+    font-size: 14px;
+  }
+
+  .switch {
+    width: 50px;
+    height: 28px;
+  }
+
+  .slider:before {
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(22px);
+  }
+}
+
 
 /* Grid des plans */
 .plans-grid {
@@ -122,32 +176,32 @@
 
 .card-header {
   margin-bottom: 20px;
+  display:inline-block;
 }
 
 .plan-title {
-  font-size: clamp(18px, 3vw, 24px); /* Titre responsive */
+  font-size: clamp(22px, 6vw, 28px); /* Titre responsive */
   font-weight: bold;
+  text-shadow: 2px 2px 8px rgba(6, 94, 25, 0.8); /* Ombre portée plus prononcée */
+
 }
 
 .plan-description {
   font-size: clamp(12px, 2vw, 16px); /* Description responsive */
-  color: #777;
+  color: black;
 }
 
 .price-container {
-  font-size: clamp(24px, 4vw, 32px); /* Prix responsive */
+  font-size: clamp(28px, 8vw, 38px); /* Prix responsive */
   font-weight: bold;
-  color: #333;
+  color: red;
 }
 
-.price-period {
-  font-size: clamp(12px, 2vw, 14px);
-  color: #777;
-}
+
 
 .annual-price {
-  font-size: clamp(10px, 1.5vw, 12px);
-  color: #666;
+  font-size: clamp(12px, 3vw, 14px);
+  color: red;
 }
 
 /* Liste des fonctionnalités */

@@ -67,19 +67,19 @@ export default function Pricing() {
         </div>
 
         <div className="billing-switch">
-          <span className={!isAnnual ? "active" : ""}>Mensuel</span>
-          <label className="switch">
-            <input
-              type="checkbox"
-              checked={isAnnual}
-              onChange={(e) => setIsAnnual(e.target.checked)}
-            />
-            <span className="slider"></span>
-          </label>
-          <span className={isAnnual ? "active" : ""}>
-            Annuel <span className="discount">-20%</span>
-          </span>
-        </div>
+  <span className={!isAnnual ? "active" : ""}>Mensuel</span>
+  <label className="switch">
+    <input
+      type="checkbox"
+      checked={isAnnual}
+      onChange={(e) => setIsAnnual(e.target.checked)}
+    />
+    <span className="slider round"></span>
+  </label>
+  <span className={isAnnual ? "active" : ""}>
+    Annuel <span className="discount">-20%</span>
+  </span>
+</div>
 
         <div className="plans-grid">
           {plans.map((plan, index) => (
@@ -90,8 +90,10 @@ export default function Pricing() {
                 <h3 className="plan-title">{plan.name}</h3>
                 <p className="plan-description">{plan.description}</p>
                 <div className="price-container">
-                  <p className="price">{isAnnual ? plan.annualPrice : plan.monthlyPrice}€</p>
-                  <p className="price-period">/mois</p>
+
+                  
+                  <p className="price">{isAnnual ? plan.annualPrice : plan.monthlyPrice}€/mois</p>
+                
                 </div>
                 {isAnnual && (
                   <p className="annual-price">Facturé annuellement ({plan.annualPrice * 12}€)</p>
