@@ -1,3 +1,5 @@
+/* Ajoutez ces styles à votre fichier CSS */
+
 .statistics-section {
   background-color: white;
   padding: 7rem 0;
@@ -87,24 +89,44 @@ p {
   font-weight: bold;
   text-align: center; /* Centrer le texte */
 }
-
-.tabs-list {
-  display: flex;
-  gap: 0.5rem;
-}
-
+/* Styles pour les boutons */
 .tabs-list button {
-  background-color: #e5e7eb;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+  background-color: #f0f4f8; /* Couleur de fond légère */
+  padding: 0.75rem 1.5rem; /* Padding plus généreux */
+  border-radius: 0.5rem; /* Coins arrondis */
   font-size: 0.875rem;
   cursor: pointer;
-  border: 1px solid green; /* Bordure verte */
+  border: 1px solid #d1d5db; /* Bordure subtile */
+  color: #1e293b; /* Couleur de texte sombre */
+  font-weight: 500; /* Texte en demi-gras */
+  transition: all 0.3s ease; /* Transition fluide */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
 }
 
+/* Style au survol */
+.tabs-list button:hover {
+  background-color: green; /* Changement de couleur au survol */
+  border-color: #9ca3af; /* Bordure plus foncée */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre plus prononcée */
+  color:white;
+}
+
+/* Style pour l'onglet actif */
 .tabs-list button[aria-selected="true"] {
-  background-color: #3b82f6;
-  color: white;
+  background-color: #3b82f6; /* Couleur de fond bleue */
+  color: white; /* Texte blanc */
+  border-color: #3b82f6; /* Bordure bleue */
+  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.2); /* Ombre bleue */
+}
+
+/* Effet au survol pour l'onglet actif */
+.tabs-list button[aria-selected="true"]:hover {
+  background-color: #2563eb; /* Bleu plus foncé au survol */
+  border-color: #2563eb;
+}
+.chart-scroll-container {
+  overflow-x: auto; /* Permet le défilement horizontal */
+  margin-top: 1rem;
 }
 
 .chart-card {
@@ -112,6 +134,7 @@ p {
   border-radius: 0.5rem;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
+  min-width: 800px; /* Largeur minimale pour le défilement horizontal */
 }
 
 span {
@@ -144,5 +167,9 @@ span {
 @media (min-width: 1024px) {
   .stats-grid {
     grid-template-columns: repeat(4, 1fr); /* 4 colonnes pour les grands écrans */
+  }
+
+  .chart-card {
+    min-width: 1000px; /* Agrandir la charte pour les grands écrans */
   }
 }

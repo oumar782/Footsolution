@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"; // Ajouter React ici
+import React, { useState, useEffect } from "react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import { Tabs } from '@radix-ui/react-tabs';
 import "../style/statistics.css";
@@ -75,10 +75,10 @@ export default function Statistics() {
             </div>
           </div>
 
-          <div className="tabs-content">
-            {/* Affichage des graphiques en fonction de l'onglet actif */}
-            {activeTab === "monthly" && (
-              <div className="chart-card">
+          {/* Conteneur scrollable pour le graphique */}
+          <div className="chart-scroll-container">
+            <div className="chart-card">
+              {activeTab === "monthly" && (
                 <ResponsiveContainer width="100%" height={400}>
                   <BarChart data={monthlyData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
                     <CartesianGrid strokeDasharray="3 3" />
@@ -90,10 +90,8 @@ export default function Statistics() {
                     <Bar yAxisId="right" dataKey="occupancy" name="Taux d'occupation (%)" fill="black" />
                   </BarChart>
                 </ResponsiveContainer>
-              </div>
-            )}
-            {activeTab === "weekly" && (
-              <div className="chart-card">
+              )}
+              {activeTab === "weekly" && (
                 <ResponsiveContainer width="100%" height={400}>
                   <BarChart data={weeklyData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
                     <CartesianGrid strokeDasharray="3 3" />
@@ -105,8 +103,8 @@ export default function Statistics() {
                     <Bar yAxisId="right" dataKey="occupancy" name="Taux d'occupation (%)" fill="black" />
                   </BarChart>
                 </ResponsiveContainer>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </div>
       </div>
