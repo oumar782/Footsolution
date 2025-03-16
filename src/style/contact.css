@@ -25,7 +25,7 @@
 
 .contact-badge {
   display: inline-block;
-  background: linear-gradient(135deg, #10b981, #059669);
+  background-color: green;
   color: white;
   padding: 0.75rem 2rem; /* Plus grand */
   border-radius: 2rem;
@@ -112,7 +112,7 @@
 }
 
 .icon {
-  color: #10b981;
+  color: green;
   font-size: 1.2rem; /* Icônes plus grandes */
 }
 
@@ -144,7 +144,7 @@
 .contact-form-button {
   width: 100%;
   padding: 1.25rem; /* Plus grand */
-  background: linear-gradient(135deg, #10b981, #059669);
+  background-color:green;
   color: white;
   font-size: 1.25rem; /* Plus grand */
   font-weight: 600;

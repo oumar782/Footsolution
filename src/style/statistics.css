@@ -111,7 +111,7 @@ p {
   color:white;
 }
 
-/* Style pour l'onglet actif */
+/* Style pour l' onglet actif */
 .tabs-list button[aria-selected="true"] {
   background-color: #3b82f6; /* Couleur de fond bleue */
   color: white; /* Texte blanc */

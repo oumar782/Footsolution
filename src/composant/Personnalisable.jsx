@@ -244,7 +244,7 @@ const Personnalisable = () => {
                     padding: "1.5rem",
                     borderRadius: "0.75rem",
                     border: "1px solid #e9ecef",
-                    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.05)",
+                    boxShadow: "0 34px 36px rgba(0, 0, 0, 0.05)",
                     transition: "transform 0.3s ease, box-shadow 0.3s ease",
                   }}
                   onMouseEnter={(e) => {
@@ -262,7 +262,7 @@ const Personnalisable = () => {
                       style={{
                         backgroundColor: index === 2 ? "#3b82f6" : "#e9ecef",
                         color: index === 2 ? "white" : "#1e293b",
-                        padding: "0.25rem 0.75rem",
+                        padding: ".25rem 0.75rem",
                         borderRadius: "1rem",
                         fontSize: "0.875rem",
                         fontWeight: "500",

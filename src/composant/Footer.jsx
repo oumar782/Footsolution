@@ -1,9 +1,11 @@
 import React from "react";
 import "../style/footer.css";
+import { FaFacebookF, FaInstagram, FaWhatsapp,FaTiktok} from "react-icons/fa"; // Import des icônes
+
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className="containersss">
+      <div className="containero">
         <div className="footer-grid">
           <div className="footer-section">
             <h3>Footspace Solutions</h3>
@@ -11,23 +13,19 @@ export default function Footer() {
               La solution complète pour la gestion et la réservation de vos terrains de football.
             </p>
             <div className="social-links">
-  <a href="#" className="social-link" style={{ color: 'white' }}>
-    <i className="fab fa-facebook-f"></i> {/* Icône Facebook */}
-    <span className="sr-only">Facebook</span>
-  </a>
-  <a href="#" className="social-link" style={{ color: 'white' }}>
-    <i className="fab fa-instagram"></i> {/* Icône Instagram */}
-    <span className="sr-only">Instagram</span>
-  </a>
-  <a href="#" className="social-link" style={{ color: 'white' }}>
-    <i className="fab fa-twitter"></i> {/* Icône Twitter */}
-    <span className="sr-only">Twitter</span>
-  </a>
-  <a href="#" className="social-link" style={{ color: 'white' }}>
-    <i className="fab fa-linkedin-in"></i> {/* Icône LinkedIn */}
-    <span className="sr-only">LinkedIn</span>
-  </a>
-</div>
+              <a href="https://web.facebook.com/profile.php?id=61573704854372" target="_blank" rel="noopener noreferrer" className="social-link">
+                <FaFacebookF />
+              </a>
+              <a href="https://www.instagram.com/footspacesolutions/" target="_blank" rel="noopener noreferrer" className="social-link">
+                <FaInstagram />
+              </a>
+              <a href="https://www.tiktok.com/@footspace.solutio?_t=ZM-8ujnK0kEDTD&_r=1" target="_blank" rel="noopener noreferrer" className="social-link">
+                <FaTiktok />
+              </a>
+              <a href="tel:+2120721976288" target="_blank" rel="noopener noreferrer" className="social-link">
+                <FaWhatsapp/>
+              </a>
+            </div>
           </div>
           <div className="footer-section">
             <h3>Produit</h3>
@@ -50,13 +48,13 @@ export default function Footer() {
           <div className="footer-section">
             <h3>Contact</h3>
             <ul className="footer-links">
-              <li style={{ color: 'white' }}>
+              <li>
                 <i className="icon-map-pin"></i>
-                <p>rue de bethune, Casablanca,Maroc </p>
+                <p>Rue de Bethune, Casablanca, Maroc</p>
               </li>
               <li>
-                <i className="icon-phone" style={{ color: 'white' }}></i>
-                <p>+212 0721976288/0688112830</p>
+                <i className="icon-phone"></i>
+                <p>+212 0721976288 / 0688112830</p>
               </li>
               <li>
                 <i className="icon-mail"></i>

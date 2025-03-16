@@ -175,8 +175,7 @@ body {
 .icon {
   width: 1rem;
   height: 1rem;
-  background-color: rgba(59, 130, 246, 0.1); /* Effet de survol */
-
+  color: gray; /* Remplace darkblue par gray */
 }
 span{
   color: darkblue;
