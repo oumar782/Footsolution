@@ -13,7 +13,7 @@ import Contact from "./composant/Contact.jsx";
 import Homepage from "./pages/Homepages.jsx";
 import Images from "./composant/imageslider.jsx";
 
-const GA_TRACKING_ID = "G-XXXXXXXXXX"; // Remplace par ton ID
+const GA_TRACKING_ID = "G-P73M64BH0Q"; // Remplace par ton ID
 
 const TrackPageView = () => {
   const location = useLocation();
