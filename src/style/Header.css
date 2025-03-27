@@ -1,18 +1,24 @@
-/* Styles de base pour le header */
+/* Header.css */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   padding: 1rem 0;
-  background-color: transparent;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.header.scrolled {
-  background-color: rgba(255, 255, 255, 0.9); /* Fond blanc semi-transparent */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ombre plus forte et plus étalée */
+.header.accueil {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.header.accueil.scrolled {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .container {
@@ -25,12 +31,26 @@
 }
 
 .logo-image {
-  height: 40px; /* Ajustez la taille selon votre logo */
+  height: 40px;
   width: auto;
   transition: filter 0.3s ease;
 }
 
-/* Navigation pour les écrans larges */
+.logo h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: #333333;
+  margin-left: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.header.accueil .logo h1 {
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(248, 249, 248, 0.7);
+}
+
 .desktop-nav {
   display: flex;
   align-items: center;
@@ -45,43 +65,38 @@
 }
 
 .nav-link {
-  color: #ffffff; /* Couleur du texte en mode normal (sans défilement) */
+  color: #333333;
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Ombre portée plus prononcée */
+  transition: color 0.3s ease;
 }
 
-.header.scrolled .nav-link {
-  color: #333333; /* Couleur du texte en mode scroll */
-
+.header.accueil .nav-link {
+  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(0, 255, 0, 0.7);
 }
 
 .nav-link:hover {
-  color: green; /* Couleur au survol */
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Ombre plus prononcée au survol */
+  color: green;
 }
 
-/* Menu hamburger pour les écrans mobiles */
 .mobile-menu-button {
-  display: none; /* Caché par défaut */
+  display: none;
   background: none;
   border: none;
   cursor: pointer;
   font-size: 1.5rem;
-  color: #ffffff; /* Couleur du bouton en mode normal */
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Ombre portée pour le bouton */
+  color: #333333;
 }
 
-.header.scrolled .mobile-menu-button {
-  color: #333333; /* Couleur du bouton en mode scroll */
-  text-shadow: none; /* Pas besoin d'ombre sur fond blanc */
+.header.accueil .mobile-menu-button {
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 255, 0, 0.7);
 }
 
-/* Navigation mobile */
 .mobile-nav {
-  display: none; /* Caché par défaut */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -97,7 +112,7 @@
 }
 
 .mobile-nav.open {
-  transform: translateX(0); /* Affiche le menu mobile */
+  transform: translateX(0);
 }
 
 .mobile-nav-links {
@@ -111,22 +126,20 @@
 }
 
 .mobile-nav-links .nav-link {
-  color: #333333; /* Couleur du texte en mode mobile */
+  color: #333333;
   font-size: 1.5rem;
-  text-shadow: none; /* Pas besoin d'ombre sur fond blanc */
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .desktop-nav {
-    display: none; /* Cache la navigation desktop sur les petits écrans */
+    display: none;
   }
 
   .mobile-menu-button {
-    display: block; /* Affiche le bouton hamburger */
+    display: block;
   }
 
   .mobile-nav {
-    display: flex; /* Affiche le menu mobile */
+    display: flex;
   }
 }

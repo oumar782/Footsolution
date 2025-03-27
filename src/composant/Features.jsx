@@ -1,14 +1,13 @@
 import React from "react";
 import { Calendar, Clock, CreditCard, BarChart3, Users, Smartphone, Palette, Shield } from "lucide-react";
-import "../style/Feature.css"; // Assurez-vous que le chemin est correct
+import "../style/Feature.css";
 
 export default function Features() {
   const features = [
     {
       icon: <Calendar className="icon" />,
       title: "Réservation en ligne",
-      description:
-        "Permettez à vos clients de réserver des créneaux horaires à tout moment, depuis n'importe quel appareil.",
+      description: "Permettez à vos clients de réserver des créneaux horaires à tout moment, depuis n'importe quel appareil.",
     },
     {
       icon: <Clock className="icon" />,
@@ -28,8 +27,7 @@ export default function Features() {
     {
       icon: <Users className="icon" />,
       title: "Gestion des clients",
-      description:
-        "Constituez une base de données clients et fidélisez votre clientèle avec des offres personnalisées.",
+      description: "Constituez une base de données clients et fidélisez votre clientèle avec des offres personnalisées.",
     },
     {
       icon: <Smartphone className="icon" />,
@@ -52,7 +50,7 @@ export default function Features() {
     <section id="features" className="features-section">
       <div className="containerss">
         <div className="headerss">
-          <div className="badget">Fonctionnalités</div>
+          <div className="tags">Fonctionnalités</div>
           <h2>Tout ce dont vous avez besoin pour gérer vos terrains</h2>
           <p>
             Footspace Solutions combine des outils puissants et une interface intuitive pour optimiser la gestion de vos
@@ -68,6 +66,8 @@ export default function Features() {
             </div>
           ))}
         </div>
+        
+       
       </div>
     </section>
   );

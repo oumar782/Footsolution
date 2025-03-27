@@ -12,8 +12,9 @@ import Personnalisable from "./composant/Personnalisable.jsx";
 import Contact from "./composant/Contact.jsx";
 import Homepage from "./pages/Homepages.jsx";
 import Images from "./composant/imageslider.jsx";
+import NotFound from "./pages/NotFound"; // Import du nouveau composant 404
 
-const GA_TRACKING_ID = "G-P73M64BH0Q"; // Remplace par ton ID
+const GA_TRACKING_ID = "G-P73M64BH0Q";
 
 const TrackPageView = () => {
   const location = useLocation();
@@ -45,6 +46,8 @@ const App = () => {
           <Route path="/personnaliser" element={<Personnalisable />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/ima" element={<Images />} />
+          {/* Route 404 - doit être la dernière */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
       <Footer />

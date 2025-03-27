@@ -1,55 +1,64 @@
-/* Features Section */
+/* Features Section - Optimized & Elegant */
 .features-section {
-  background-color: #f9fafb;
-  padding: 6rem 20px; /* Réduit l'espacement sur les petits écrans */
-  
+  background-color: white;
+  padding: clamp(4rem, 5vw, 6rem) 1.25rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .containerss {
-  width: 90%;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 .headerss {
   text-align: center;
-  margin-bottom: 3rem;
-  margin-left: 0; /* Suppression de la marge gauche */
+  margin-bottom: clamp(2rem, 4vw, 3rem);
 }
 
 .tags {
   display: inline-block;
-  background-color: #3b82f6;
+  background: linear-gradient(135deg, #04ee52 0%, #021037 100%);
   color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 2rem;
   font-size: 0.875rem;
+  font-weight: 500;
   margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.15);
 }
 
 h2 {
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 700;
   margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(152, 251, 152, 0.5);
-  margin-left: 0; /* Suppression de la marge gauche */
+  line-height: 1.2;
+  color: #111827;
+  background: linear-gradient(90deg, #048d42, #020549);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-p {
-  color: #6b7280;
-  max-width: 900px;
+.headerss p {
+  color: #4b5563;
+  max-width: 720px;
   margin: 0 auto;
-  font-size: 1.125rem;
-  line-height: 1.6; /* Améliore la lisibilité */
+  font-size: clamp(1rem, 1.25vw, 1.125rem);
+  line-height: 1.625;
 }
 
 /* Features Grid */
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 1.5rem;
-  padding: 2rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 1.75rem;
+  padding: 1rem 0;
 }
 
 .feature-card {
@@ -57,106 +66,90 @@ p {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 1.5rem;
-  border: 1px solid #e5e7eb;
-  border-radius: 0.5rem;
-  transition: box-shadow 0.3s ease;
-  box-shadow: 0 20px 20px rgba(0, 255, 0, 0.1); /* Ombre verte avec 10% d'opacité */
+  padding: 2rem 1.5rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: white;
+  border: 1px solid rgba(229, 231, 235, 0.5);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #10b981);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .feature-card:hover {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.feature-card:hover::before {
+  opacity: 1;
 }
 
 .icon {
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 2.75rem;
+  width: 2.75rem;
+  margin-bottom: 1.5rem;
   color: #3b82f6;
-  margin-bottom: 1rem;
-}
-
-h3 {
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  text-shadow: 2px 2px 4px rgba(152, 251, 152, 0.5);
-}
-
-.feature-card p {
-  font-size: 0.875rem;
-  color: #6b7280;
-}
-
-/* Responsive Design */
-@media (min-width: 480px) {
-  .features-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 colonnes pour les écrans moyens */
-  }
-
-  h2 {
-    font-size: 2.5rem; /* Taille de police légèrement augmentée */
-  }
-
-  p {
-    font-size: 1rem; /* Taille de police ajustée */
-  }
-}
-
-@media (min-width: 768px) {
-  .features-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 colonnes pour les tablettes */
-  }
-
-  h2 {
-    font-size: 3rem; /* Taille de police augmentée */
-  }
-
-  p {
-    font-size: 1.25rem; /* Taille de police augmentée */
-  }
-}
-
-@media (min-width: 1024px) {
-  .features-grid {
-    grid-template-columns: repeat(4, 1fr); /* 4 colonnes pour les grands écrans */
-  }
-}
-
-/* Carte contenant le calendrier */
-.card-container {
-  margin: 0 auto;
-  width: 100%; /* Prend toute la largeur sur les petits écrans */
-  max-width: 500px; /* Limite la largeur maximale */
-  aspect-ratio: 16/9; /* Proportion adaptée */
-  overflow: hidden;
-  border-radius: 1rem;
-  border: 1px solid #e5e7eb;
-  background-color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.card {
-  position: relative;
-  width: 100%;
-  padding: 1rem;
-  border-radius: 0.75rem;
-  background-color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
-.card:hover {
-  transform: scale(1.02); /* Effet de survol */
+.feature-card:hover .icon {
+  transform: scale(1.1);
 }
 
-/* Responsive pour la carte */
-@media (max-width: 768px) {
-  .card-container {
-    aspect-ratio: auto; /* Désactive la proportion fixe */
-    height: auto; /* Hauteur automatique */
-  }
+.feature-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(90deg, #048d42, #020549);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 
-  .card {
-    padding: 0.75rem; /* Réduit le padding */
+.feature-card p {
+  font-size: 0.9375rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 1023px) {
+  .features-grid {
+    gap: 1.25rem;
+  }
+  
+  .feature-card {
+    padding: 1.75rem 1.25rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .card-container {
+    aspect-ratio: auto;
+    height: auto;
+    max-width: 100%;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
   }
 }

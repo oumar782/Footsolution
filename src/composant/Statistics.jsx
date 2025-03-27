@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
-import { Tabs } from '@radix-ui/react-tabs';
 import "../style/statistics.css";
 
 export default function Statistics() {
   const [mounted, setMounted] = useState(false);
-  const [activeTab, setActiveTab] = useState("monthly"); // État pour suivre l'onglet actif
+  const [activeTab, setActiveTab] = useState("monthly");
 
   useEffect(() => {
     setMounted(true);
@@ -45,7 +44,7 @@ export default function Statistics() {
     <section className="statistics-section">
       <div className="containert">
         <div className="headert">
-          <div className="badget">Résultats</div>
+          <div className="badgetss">Résultats</div>
           <h2>Optimisez vos performances</h2>
           <p>Suivez et améliorez vos indicateurs clés grâce à nos tableaux de bord analytiques.</p>
         </div>
@@ -64,43 +63,128 @@ export default function Statistics() {
 
         <div className="chart-container">
           <div className="tabs-header">
-            <h3> L'evolution des performances de votre entreprise avec <span>FootSpace Solutions</span></h3>
+            <h3>L'evolution des performances de votre entreprise avec <span>FootSpace-Solutions</span></h3>
             <div className="tabs-list">
-              <button onClick={() => setActiveTab("weekly")} className={activeTab === "weekly" ? "active" : ""}>
+              <button 
+                onClick={() => setActiveTab("weekly")} 
+                className={activeTab === "weekly" ? "active" : ""}
+              >
                 Hebdomadaire
               </button>
-              <button onClick={() => setActiveTab("monthly")} className={activeTab === "monthly" ? "active" : ""}>
+              <button 
+                onClick={() => setActiveTab("monthly")} 
+                className={activeTab === "monthly" ? "active" : ""}
+              >
                 Mensuelle
               </button>
             </div>
           </div>
 
-          {/* Conteneur scrollable pour le graphique */}
           <div className="chart-scroll-container">
             <div className="chart-card">
               {activeTab === "monthly" && (
-                <ResponsiveContainer width="100%" height={400}>
-                  <BarChart data={monthlyData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
-                    <YAxis yAxisId="left" orientation="left" stroke="black" />
-                    <YAxis yAxisId="right" orientation="right" stroke="red" />
-                    <Tooltip />
-                    <Bar yAxisId="left" dataKey="revenue" name="Revenus (€)" fill="green" />
-                    <Bar yAxisId="right" dataKey="occupancy" name="Taux d'occupation (%)" fill="black" />
+                <ResponsiveContainer width="100%" height={450}>
+                  <BarChart 
+                    data={monthlyData} 
+                    margin={{ top: 20, right: 30, left: 20, bottom: 10 }}
+                    barSize={32}
+                  >
+                    <CartesianGrid vertical={false} />
+                    <XAxis 
+                      dataKey="name" 
+                      axisLine={false}
+                      tickLine={false}
+                      tick={{ fill: '#6b7280' }}
+                    />
+                    <YAxis 
+                      yAxisId="left" 
+                      orientation="left" 
+                      axisLine={false}
+                      tickLine={false}
+                      tick={{ fill: '#6b7280' }}
+                    />
+                    <YAxis 
+                      yAxisId="right" 
+                      orientation="right" 
+                      axisLine={false}
+                      tickLine={false}
+                      tick={{ fill: '#6b7280' }}
+                    />
+                    <Tooltip 
+                      cursor={{ fill: 'rgba(8, 99, 16, 0.05)' }}
+                      contentStyle={{
+                        border: 'none',
+                        borderRadius: '12px',
+                        boxShadow: '0 10px 25px rgba(0, 0, 0, 0.08)'
+                      }}
+                    />
+                    <Bar 
+                      yAxisId="left" 
+                      dataKey="revenue" 
+                      name="Revenus (€)" 
+                      fill="#086310"
+                      radius={[6, 6, 0, 0]}
+                    />
+                    <Bar 
+                      yAxisId="right" 
+                      dataKey="occupancy" 
+                      name="Taux d'occupation (%)" 
+                      fill="#4b5563"
+                      radius={[6, 6, 0, 0]}
+                    />
                   </BarChart>
                 </ResponsiveContainer>
               )}
               {activeTab === "weekly" && (
-                <ResponsiveContainer width="100%" height={400}>
-                  <BarChart data={weeklyData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
-                    <YAxis yAxisId="left" orientation="left" stroke="black" />
-                    <YAxis yAxisId="right" orientation="right" stroke="red" />
-                    <Tooltip />
-                    <Bar yAxisId="left" dataKey="revenue" name="Revenus (€)" fill="green" />
-                    <Bar yAxisId="right" dataKey="occupancy" name="Taux d'occupation (%)" fill="black" />
+                <ResponsiveContainer width="100%" height={450}>
+                  <BarChart 
+                    data={weeklyData} 
+                    margin={{ top: 20, right: 30, left: 20, bottom: 10 }}
+                    barSize={32}
+                  >
+                    <CartesianGrid vertical={false} />
+                    <XAxis 
+                      dataKey="name" 
+                      axisLine={false}
+                      tickLine={false}
+                      tick={{ fill: '#6b7280' }}
+                    />
+                    <YAxis 
+                      yAxisId="left" 
+                      orientation="left" 
+                      axisLine={false}
+                      tickLine={false}
+                      tick={{ fill: '#6b7280' }}
+                    />
+                    <YAxis 
+                      yAxisId="right" 
+                      orientation="right" 
+                      axisLine={false}
+                      tickLine={false}
+                      tick={{ fill: '#6b7280' }}
+                    />
+                    <Tooltip 
+                      cursor={{ fill: 'rgba(8, 99, 16, 0.05)' }}
+                      contentStyle={{
+                        border: 'none',
+                        borderRadius: '12px',
+                        boxShadow: '0 10px 25px rgba(0, 0, 0, 0.08)'
+                      }}
+                    />
+                    <Bar 
+                      yAxisId="left" 
+                      dataKey="revenue" 
+                      name="Revenus (€)" 
+                      fill="#086310"
+                      radius={[6, 6, 0, 0]}
+                    />
+                    <Bar 
+                      yAxisId="right" 
+                      dataKey="occupancy" 
+                      name="Taux d'occupation (%)" 
+                      fill="#4b5563"
+                      radius={[6, 6, 0, 0]}
+                    />
                   </BarChart>
                 </ResponsiveContainer>
               )}

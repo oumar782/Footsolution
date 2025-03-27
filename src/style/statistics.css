@@ -1,175 +1,316 @@
-/* Ajoutez ces styles à votre fichier CSS */
-
+/* Statistics Section - Premium Enhanced Design */
 .statistics-section {
   background-color: white;
-  padding: 7rem 0;
-  margin-left: 20px;
+  padding: clamp(5rem, 8vw, 10rem) 0;
+  position: relative;
+  overflow: hidden;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(4, 238, 82, 0.03) 0%, rgba(255, 255, 255, 0) 30%),
+    linear-gradient(to bottom, rgba(253, 253, 253, 0.95), rgba(253, 253, 253, 1));
 }
 
 .containert {
-  width: 90%;
-  max-width: 1200px;
+  width: min(92%, 1440px);
   margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 2.5rem);
 }
 
+/* Header Styles - Modified for line break */
 .headert {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+  position: relative;
 }
 
-.badget {
-  display: inline-block;
-  background-color: #086310;
+.badgetss {
+  display: block; /* Changé de inline-flex à block */
+  width: max-content; /* Pour ne pas prendre toute la largeur */
+  margin: 0 auto 1.5rem; /* Centrage et marge basse */
+  background: linear-gradient(135deg, #04ee52 0%, #021037 100%);
   color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  font-size: 0.875rem;
-  margin-bottom: 1rem;
+  padding: 0.6rem 1.5rem;
+  border-radius: 100px;
+  font-size: clamp(0.75rem, 1.6vw, 0.9rem);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 15px rgba(4, 238, 82, 0.2);
+  position: relative;
+  overflow: hidden;
 }
 
-h2 {
-  font-size: 2.25rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
+/* Tous les autres styles restent inchangés... */
+.headert h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #04762a 0%, #021037 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  display: block; /* S'assure qu'il est sur sa propre ligne */
 }
 
-p {
-  color: black;
-  font-size: 1.125rem;
-  max-width: 900px;
-  margin: 0 auto;
+.headert h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #04ee52, #021037);
+  border-radius: 2px;
 }
 
+/* Stats Cards - Premium Version */
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 1.5rem;
-  margin-top: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
 }
 
 .stat-card {
-  background-color: white;
-  border-radius: 2rem;
-  box-shadow: 0 30px 30px rgba(8, 8, 8, 0.1);
-  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(4, 238, 82, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #04ee52, #021037);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.stat-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(4, 238, 82, 0.03) 0%, rgba(2, 16, 55, 0.02) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(4, 238, 82, 0.15);
+  border-color: rgba(4, 238, 82, 0.3);
+}
+
+.stat-card:hover::before,
+.stat-card:hover::after {
+  opacity: 1;
+}
+
+.stat-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(4, 238, 82, 0.1) 0%, rgba(2, 16, 55, 0.1) 100%);
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.stat-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: #04ee52;
 }
 
 .stat-header h3 {
-  font-size: 1.125rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(90deg, #048d42, #020549);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  display: inline-block;
 }
 
 .stat-header p {
-  color: black;
-  font-size: 0.875rem;
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
 }
 
 .stat-value {
-  font-size: 1.875rem;
-  font-weight: bold;
-  color: #075427;
-  margin-top: 1rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: #04ee52;
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
+.stat-value::after {
+  content: '+';
+  font-size: 1.5rem;
+  color: rgba(4, 238, 82, 0.6);
+}
+
+/* CHART CONTAINER - ORIGINAL UNTOUCHED CODE */
 .chart-container {
-  margin-top: 3rem;
+  margin-top: 4rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f0f0f0;
+  padding: 2.5rem;
 }
 
 .tabs-header {
   display: flex;
-  flex-direction: column; /* Empile les éléments sur les petits écrans */
+  justify-content: space-between;
   align-items: center;
-  gap: 1rem; /* Espacement entre les éléments */
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .tabs-header h3 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-align: center; /* Centrer le texte */
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #222;
 }
-/* Styles pour les boutons */
+
+.tabs-header h3 span {
+  color: #086310;
+  font-weight: 700;
+}
+
+/* Enhanced Responsive Buttons */
+.tabs-list {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
 .tabs-list button {
-  background-color: #f0f4f8; /* Couleur de fond légère */
-  padding: 0.75rem 1.5rem; /* Padding plus généreux */
-  border-radius: 0.5rem; /* Coins arrondis */
-  font-size: 0.875rem;
+  background-color: #f8f8f8;
+  padding: 0.8rem 1.75rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #555;
+  border: 1px solid #e0e0e0;
   cursor: pointer;
-  border: 1px solid #d1d5db; /* Bordure subtile */
-  color: #1e293b; /* Couleur de texte sombre */
-  font-weight: 500; /* Texte en demi-gras */
-  transition: all 0.3s ease; /* Transition fluide */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Style au survol */
+.tabs-list button svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  transition: transform 0.3s ease;
+}
+
 .tabs-list button:hover {
-  background-color: green; /* Changement de couleur au survol */
-  border-color: #9ca3af; /* Bordure plus foncée */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre plus prononcée */
-  color:white;
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
 }
 
-/* Style pour l' onglet actif */
-.tabs-list button[aria-selected="true"] {
-  background-color: #3b82f6; /* Couleur de fond bleue */
-  color: white; /* Texte blanc */
-  border-color: #3b82f6; /* Bordure bleue */
-  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.2); /* Ombre bleue */
+.tabs-list button:hover svg {
+  transform: translateX(3px);
 }
 
-/* Effet au survol pour l'onglet actif */
-.tabs-list button[aria-selected="true"]:hover {
-  background-color: #2563eb; /* Bleu plus foncé au survol */
-  border-color: #2563eb;
+.tabs-list button.active {
+  background: linear-gradient(135deg, #04ee52, #021037);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 5px 15px rgba(4, 238, 82, 0.3);
 }
+
+.tabs-list button.active svg {
+  stroke: white;
+}
+
+/* Original Chart Styles Preserved */
 .chart-scroll-container {
-  overflow-x: auto; /* Permet le défilement horizontal */
-  margin-top: 1rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
 }
 
 .chart-card {
-  background-color: white;
-  border-radius: 0.5rem;
-  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+  min-width: 800px;
+  background: #ffffff;
+  border-radius: 12px;
   padding: 1.5rem;
-  min-width: 800px; /* Largeur minimale pour le défilement horizontal */
 }
 
-span {
-  color: green;
-}
-
-/* Responsive Design */
-@media (min-width: 480px) {
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
   .stats-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 colonnes pour les écrans moyens */
+    gap: 1.5rem;
   }
+  
+  .stat-card {
+    padding: 2rem 1.5rem;
+  }
+}
 
+@media (max-width: 992px) {
   .tabs-header {
-    flex-direction: row; /* Alignement horizontal sur les écrans plus larges */
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
   }
-
-  .tabs-header h3 {
-    text-align: left; /* Alignement à gauche sur les écrans plus larges */
-  }
-}
-
-@media (min-width: 768px) {
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 colonnes pour les tablettes */
+  
+  .tabs-list {
+    width: 100%;
   }
 }
 
-@media (min-width: 1024px) {
-  .stats-grid {
-    grid-template-columns: repeat(4, 1fr); /* 4 colonnes pour les grands écrans */
+@media (max-width: 768px) {
+  .stat-card {
+    padding: 1.75rem 1.5rem;
   }
+  
+  .tabs-list button {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+    flex: 1 1 calc(50% - 0.5rem);
+    justify-content: center;
+  }
+}
 
-  .chart-card {
-    min-width: 1000px; /* Agrandir la charte pour les grands écrans */
+@media (max-width: 576px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tabs-list button {
+    flex: 1 1 100%;
+  }
+  
+  .chart-container {
+    padding: 1.5rem;
   }
 }

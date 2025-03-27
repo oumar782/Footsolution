@@ -3,71 +3,84 @@ import { Calendar, Clock, Users } from "lucide-react";
 import "../style/Personnalisable.css";
 
 export default function Hero() {
-  const [isHovered, setIsHovered] = useState(false);
+  const [activeDay, setActiveDay] = useState(2); // Jour actif par défaut
+
+  // Données dynamiques pour les créneaux
+  const timeSlots = [
+    { time: "10:00 - 11:30", availability: "5/10", status: "available" },
+    { time: "14:00 - 15:30", availability: "8/10", status: "popular" },
+    { time: "18:00 - 19:30", availability: "2/10", status: "limited" }
+  ];
 
   return (
     <section className="hero-section">
       <div className="container">
-        <div className="grid">
-          <div className="content">
-            <div className="text-content">
-              <h1>Optimisez vos réservations avec FootSpace Solutions</h1>
-              <p>
-                Simplifiez la gestion de vos terrains de football grâce à notre solution de réservation en ligne. Maximisez vos revenus et offrez une expérience fluide à vos clients.
-              </p>
+        <div className="grid-layout">
+          {/* Contenu texte */}
+          <div className="content-wrapper">
+            <h1 className="hero-title">
+              <span className="title-gradient">Optimisez vos réservations</span>
+              <br />
+              avec FootSpace-Solutions
+            </h1>
+            <p className="hero-description">
+              Solution clé en main pour la gestion premium de vos terrains. 
+              Augmentez votre taux d'occupation de 40% avec notre interface 
+              haut de gamme et nos outils analytiques avancés.
+            </p>
+            
+            <div className="cta-group">
+              <button className="cta-primary">
+                Demander une démo
+              </button>
+              <button className="cta-secondary">
+                Voir les fonctionnalités
+              </button>
             </div>
           </div>
-          <div
-            className="card-container"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            <div className="card">
-              <div className="card-header">
-                <h3>Réservation de terrain</h3>
-                <Calendar className="calendar-icon" />
-              </div>
-              <div className="calendar-grid">
-                {["L", "M", "M", "J", "V", "S", "D"].map((day, i) => (
-                  <div
-                    key={i}
-                    className={`day ${
-                      i === 2 || i === 4
-                        ? "primary-bg"
-                        : i === 3
-                        ? "orange-bg"
-                        : "muted-bg"
-                    }`}
-                  >
-                    {day}
+
+          {/* Carte de réservation */}
+          <div className="card-elegant">
+            <div className="card-header">
+              <h3 className="card-title">
+                <Calendar className="icon-header" />
+                Réservation Premium
+              </h3>
+              <span className="card-badge">Disponible</span>
+            </div>
+
+            <div className="calendar-grid">
+              {["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"].map((day, i) => (
+                <button
+                  key={i}
+                  className={`day-pill ${activeDay === i ? 'active-day' : ''}`}
+                  onClick={() => setActiveDay(i)}
+                >
+                  {day}
+                </button>
+              ))}
+            </div>
+
+            <div className="time-slots-container">
+              {timeSlots.map((slot, index) => (
+                <div key={index} className={`time-slot ${slot.status}`}>
+                  <div className="slot-info">
+                    <Clock className="slot-icon" />
+                    <span>{slot.time}</span>
                   </div>
-                ))}
-              </div>
-              <div className="time-slots">
-                <div className="slot muted-bg">
-                  <Clock className="icon" />
-                  <span>10:00 - 11:30</span>
-                  <Users className="icon" />
-                  <span>5/10</span>
+                  <div className="slot-availability">
+                    <Users className="slot-icon" />
+                    <span>{slot.availability}</span>
+                  </div>
+                  <button className="slot-button">
+                    Réserver
+                  </button>
                 </div>
-                <div className="slot primary-bg-light" >
-                  <Clock className="icon primary-text" />
-                  <span className="primary-text">14:00 - 15:30</span>
-                  <Users className="icon primary-text"  />
-                  <span className="primary-text">8/10</span>
-                </div>
-                <div className="slot muted-bg">
-                  <Clock className="icon" />
-                  <span>18:00 - 19:30</span>
-                  <Users className="icon" />
-                  <span>2/10</span>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
       </div>
-      <div className="gradient-overlay"></div>
     </section>
   );
 }
