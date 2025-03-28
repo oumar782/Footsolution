@@ -1,4 +1,4 @@
-import React, { useState } from "react"; // Ajout de React ici
+import React, { useState } from "react";
 import { Check } from "lucide-react";
 import "../style/tarif.css";
 
@@ -63,23 +63,26 @@ export default function Pricing() {
         <div className="headerz">
           <div className="badgez">Tarifs</div>
           <h2>Des forfaits adaptés à vos besoins</h2>
-          <p>Choisissez la formule qui correspond le mieux à la taille de votre structure.</p>
+          <div className="title-underline"></div>
+          <p className="subtitlez">Choisissez la formule qui correspond le mieux à la taille de votre structure.</p>
         </div>
 
-        <div className="billing-switch">
-  <span className={!isAnnual ? "active" : ""}>Mensuel</span>
-  <label className="switch">
-    <input
-      type="checkbox"
-      checked={isAnnual}
-      onChange={(e) => setIsAnnual(e.target.checked)}
-    />
-    <span className="slider round"></span>
-  </label>
-  <span className={isAnnual ? "active" : ""}>
-    Annuel <span className="discount">-20%</span>
-  </span>
-</div>
+        <div className="billing-switch-container">
+          <div className="billing-switch">
+            <span className={!isAnnual ? "active" : ""}>Mensuel</span>
+            <label className="switch">
+              <input
+                type="checkbox"
+                checked={isAnnual}
+                onChange={(e) => setIsAnnual(e.target.checked)}
+              />
+              <span className="slider round"></span>
+            </label>
+            <span className={isAnnual ? "active" : ""}>
+              Annuel <span className="discount">-20%</span>
+            </span>
+          </div>
+        </div>
 
         <div className="plans-grid">
           {plans.map((plan, index) => (
@@ -90,10 +93,7 @@ export default function Pricing() {
                 <h3 className="plan-title">{plan.name}</h3>
                 <p className="plan-description">{plan.description}</p>
                 <div className="price-container">
-
-                  
-                  <p className="price">{isAnnual ? plan.annualPrice : plan.monthlyPrice}€/mois</p>
-                
+                  <p className="price">{isAnnual ? plan.annualPrice : plan.monthlyPrice}€<span>/mois</span></p>
                 </div>
                 {isAnnual && (
                   <p className="annual-price">Facturé annuellement ({plan.annualPrice * 12}€)</p>
@@ -101,7 +101,7 @@ export default function Pricing() {
               </div>
 
               <div className="card-content">
-                <ul>
+                <ul className="features-list">
                   {plan.features.map((feature, i) => (
                     <li key={i}>
                       <Check className="icon" />
@@ -119,7 +119,9 @@ export default function Pricing() {
               </div>
 
               <div className="card-footer">
-                <button className={plan.popular ? "primary-button" : "outline-button"}>Commander</button>
+                <button className={plan.popular ? "primary-button" : "outline-button"}>
+                  {plan.popular ? "Commencer" : "Choisir"}
+                </button>
               </div>
             </div>
           ))}

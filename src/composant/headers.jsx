@@ -11,7 +11,7 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (location.pathname === "/accueil") {
-        setIsScrolled(window.scrollY > 50);
+        setIsScrolled(window.scrollY > 0);
       }
     };
 
@@ -33,8 +33,7 @@ const Header = () => {
             <img src={logo} alt="Logo" className="logo-image" />
           </Link>
           <h1 className="logo">
-            <span>FootSpace</span>
-            <span>Solutions</span>
+            <span>FootSpace-Solutions</span>
           </h1>
         </div>
 

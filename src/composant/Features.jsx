@@ -52,6 +52,7 @@ export default function Features() {
         <div className="headerss">
           <div className="tags">Fonctionnalités</div>
           <h2>Tout ce dont vous avez besoin pour gérer vos terrains</h2>
+          <div className="title-underline"></div>   
           <p>
             Footspace Solutions combine des outils puissants et une interface intuitive pour optimiser la gestion de vos
             terrains de football.
@@ -66,8 +67,6 @@ export default function Features() {
             </div>
           ))}
         </div>
-        
-       
       </div>
     </section>
   );

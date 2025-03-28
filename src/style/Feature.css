@@ -1,4 +1,4 @@
-/* Features Section - Optimized & Elegant */
+/* Features Section */
 .features-section {
   background-color: white;
   padding: clamp(4rem, 5vw, 6rem) 1.25rem;
@@ -33,7 +33,7 @@
   box-shadow: 0 4px 6px rgba(59, 130, 246, 0.15);
 }
 
-h2 {
+.headerss h2 {
   font-size: clamp(1.75rem, 4vw, 2.75rem);
   font-weight: 700;
   margin-bottom: 1rem;
@@ -43,6 +43,15 @@ h2 {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+.title-underline {
+  display: block;
+  width: 200px;
+  height: 4px;
+  background: linear-gradient(90deg, #04ee52, #021037);
+  margin: 1rem auto;
+  border-radius: 2px;
 }
 
 .headerss p {
@@ -127,8 +136,6 @@ h2 {
   margin: 0;
 }
 
-
-
 /* Responsive Adjustments */
 @media (max-width: 1023px) {
   .features-grid {
@@ -141,12 +148,6 @@ h2 {
 }
 
 @media (max-width: 767px) {
-  .card-container {
-    aspect-ratio: auto;
-    height: auto;
-    max-width: 100%;
-  }
-  
   .features-grid {
     grid-template-columns: 1fr;
     max-width: 500px;
