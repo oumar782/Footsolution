@@ -302,6 +302,9 @@
 }
 
 @media (max-width: 576px) {
+  .statistics-section {
+   margin-left: -15px;
+  }
   .stats-grid {
     grid-template-columns: 1fr;
   }

@@ -73,7 +73,7 @@ const Personnalisable = () => {
       position: "relative",
       backgroundColor: "#f8fafc",
       backgroundImage: "linear-gradient(to bottom, #ffffff, #f8fafc)",
-      padding: "5rem 1rem",
+      padding: "3rem 1rem",
       overflow: "hidden"
     }}>
       {/* Fond décoratif */}
@@ -88,10 +88,11 @@ const Personnalisable = () => {
       <div style={{
         position: "relative",
         maxWidth: "1200px",
-        margin: "0 auto"
+        margin: "0 auto",
+        padding: "0 1rem"
       }}>
         {/* En-tête */}
-        <div style={{ textAlign: "center", marginBottom: "4rem" }}>
+        <div style={{ textAlign: "center", marginBottom: "3rem" }}>
           <span style={{
             display: "inline-flex",
             alignItems: "center",
@@ -108,7 +109,7 @@ const Personnalisable = () => {
             PERSONNALISATION
           </span>
           <h2 style={{
-            fontSize: "clamp(2rem, 5vw, 3rem)",
+            fontSize: "clamp(1.75rem, 5vw, 3rem)",
             fontWeight: 700,
             color: "#1e293b",
             marginBottom: "1rem",
@@ -123,7 +124,7 @@ const Personnalisable = () => {
             </span>
             <div style={{
               display: "block",
-              width: "200px",
+              width: "clamp(150px, 30vw, 200px)",
               height: "4px",
               background: "linear-gradient(90deg, #04ee52, #021037)",
               margin: "1rem auto",
@@ -132,7 +133,7 @@ const Personnalisable = () => {
           </h2>
           <p style={{
             color: "#64748b",
-            fontSize: "1.25rem",
+            fontSize: "clamp(1rem, 2vw, 1.25rem)",
             maxWidth: "800px",
             margin: "0 auto",
             lineHeight: 1.6
@@ -146,7 +147,7 @@ const Personnalisable = () => {
           display: "grid",
           gridTemplateColumns: "1fr",
           gap: "2rem",
-          marginBottom: "4rem"
+          marginBottom: "3rem"
         }}>
           {/* Options de personnalisation */}
           <div style={{
@@ -156,13 +157,18 @@ const Personnalisable = () => {
             border: "1px solid #e2e8f0",
             overflow: "hidden"
           }}>
-            <div style={{ padding: "2rem" }}>
+            <div style={{ padding: "1.5rem" }}>
               <div style={{
                 display: "flex",
                 gap: "0.5rem",
                 marginBottom: "1.5rem",
                 overflowX: "auto",
-                paddingBottom: "0.5rem"
+                paddingBottom: "0.5rem",
+                scrollbarWidth: "none",
+                msOverflowStyle: "none",
+                "&::-webkit-scrollbar": {
+                  display: "none"
+                }
               }}>
                 {['colors', 'fonts', 'branding'].map((tab) => (
                   <button
@@ -297,7 +303,7 @@ const Personnalisable = () => {
             border: "1px solid #e2e8f0",
             overflow: "hidden"
           }}>
-            <div style={{ padding: "2rem" }}>
+            <div style={{ padding: "1.5rem" }}>
               <h3 style={{
                 display: "flex",
                 alignItems: "center",
@@ -421,14 +427,14 @@ const Personnalisable = () => {
         </div>
 
         {/* Options de personnalisation */}
-        <div>
+        <div style={{ padding: "0 1rem" }}>
           <h2 style={{
-            fontSize: "clamp(2rem, 5vw, 3rem)",
+            fontSize: "clamp(1.75rem, 5vw, 3rem)",
             fontWeight: 700,
             color: "#1e293b",
-            marginBottom: "1rem",
-            marginLeft: "20rem",
-            lineHeight: 1.2
+            marginBottom: "2rem",
+            lineHeight: 1.2,
+            textAlign: "center"
           }}>
             <span style={{
               background: "linear-gradient(to right, rgb(16, 185, 98), rgb(13, 8, 144))",
@@ -439,22 +445,20 @@ const Personnalisable = () => {
             </span>
             <div style={{
               display: "block",
-              width: "400px",
+              width: "clamp(200px, 50vw, 400px)",
               height: "4px",
               background: "linear-gradient(90deg, #04ee52, #021037)",
-              margin: "0rem",
-              borderRadius: "2px",
-              marginLeft: "8rem"
+              margin: "1rem auto",
+              borderRadius: "2px"
             }}></div>
           </h2>
           
           <div 
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))",
               gap: "1.5rem",
-              position: "relative",
-              paddingTop: "4px"
+              position: "relative"
             }}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}

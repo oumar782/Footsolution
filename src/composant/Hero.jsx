@@ -29,14 +29,7 @@ export default function Hero() {
               haut de gamme et nos outils analytiques avancés.
             </p>
             
-            <div className="cta-group">
-              <button className="cta-primary">
-                Demander une démo
-              </button>
-              <button className="cta-secondary">
-                Voir les fonctionnalités
-              </button>
-            </div>
+           
           </div>
 
           {/* Carte de réservation */}

@@ -275,6 +275,7 @@
 @media (max-width: 992px) {
   .hero-section {
     padding: 6rem 0;
+    margin-left:6px;
   }
   
   .grid-layout {
