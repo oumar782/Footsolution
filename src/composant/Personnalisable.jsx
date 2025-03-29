@@ -72,7 +72,6 @@ const Personnalisable = () => {
     <section style={{
       position: "relative",
       backgroundColor: "#f8fafc",
-      backgroundImage: "linear-gradient(to bottom, #ffffff, #f8fafc)",
       padding: "3rem 1rem",
       overflow: "hidden"
     }}>
@@ -96,7 +95,7 @@ const Personnalisable = () => {
           <span style={{
             display: "inline-flex",
             alignItems: "center",
-            background: "linear-gradient(to right, rgb(3, 116, 26), rgb(3, 20, 117))",
+            background: "linear-gradient(to right, rgb(3, 116, 26), rgb(11, 36, 178))",
             color: "white",
             fontSize: "0.875rem",
             fontWeight: 500,
@@ -105,7 +104,7 @@ const Personnalisable = () => {
             marginBottom: "1.5rem",
             boxShadow: "0 4px 6px rgba(5, 150, 105, 0.2)"
           }}>
-            <Zap style={{ width: "1rem", height: "1rem", marginRight: "0.5rem" }} />
+            <Zap style={{ width: "1rem", height: "1rem", marginRight: "-1.2rem",marginTop: "-135px" }} />
             PERSONNALISATION
           </span>
           <h2 style={{

@@ -25,7 +25,8 @@
 
 .contact-badge {
   display: inline-block;
-  background-color: green;
+  background: linear-gradient(135deg, #04ee52 0%, #021037 100%);
+
   color: white;
   padding: 0.75rem 2rem; /* Plus grand */
   border-radius: 2rem;
@@ -35,16 +36,28 @@
   text-transform: uppercase;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+.title-underline {
+  display: block;
+  width: 200px;
+  height: 4px;
+  background: linear-gradient(90deg, #04ee52, #021037);
+  margin: 1rem auto;
+  border-radius: 2px;
+}
 
 .contact-title {
   font-size: 3rem; /* Plus grand */
   font-weight: 700;
   margin-bottom: 1.5rem;
-  color: #1e293b;
+  background: linear-gradient(90deg, #048d42, #020549);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
 }
 
 .contact-description {
-  color: #64748b;
+  color: black;
   font-size: 1.25rem; /* Plus grand */
   max-width: 900px; /* Élargi */
   margin: 0 auto;
@@ -75,8 +88,12 @@
 .contact-card-title {
   font-size: 2rem; /* Plus grand */
   font-weight: 700;
-  color: #1e293b;
+  background: linear-gradient(90deg, #048d42, #020549);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   margin-bottom: 1rem;
+
 }
 
 .contact-card-description {

@@ -8,6 +8,7 @@ const Contact = () => {
             <section className="contact-section">
                 <div className="contact-header">
                     <span className="contact-badge">Contactez-nous</span>
+                    <div className="title-underline"></div>
                     <h1 className="contact-title">Prêt à optimiser vos réservations ?</h1>
                     <p className="contact-description">
                         Contactez-nous pour une démonstration personnalisée ou pour obtenir plus d'informations.

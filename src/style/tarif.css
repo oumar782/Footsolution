@@ -19,7 +19,8 @@
 /* En-tête */
 .headerz .badgez {
   display: inline-block;
-  background-color: green;
+  background: linear-gradient(135deg, #04ee52 0%, #021037 100%);
+
   color: white;
   padding: 5px 15px;
   border-radius: 20px;
