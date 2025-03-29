@@ -12,7 +12,8 @@
 
 .header.accueil {
   background-color: transparent;
-  box-shadow: none;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+
 }
 
 .header.accueil.scrolled {
