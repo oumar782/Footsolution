@@ -84,8 +84,9 @@
 }
 /* Ajoutez ces règles à votre fichier CSS existant */
 
-.header.accueil.scrolled .logo h1,
-color: #797676 !important;
+.header.accueil.scrolled .logo h1 {
+  color: #797676 !important;
+}
 .header.accueil.scrolled .logo-image {
   filter: brightness(1) !important;
   transition: filter 0.3s ease, color 0.3s ease;
