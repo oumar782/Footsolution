@@ -1,22 +1,16 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
 
 export default defineConfig({
-  plugins: [react()],
   build: {
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
+    rollupOptions: {
+      output: {
+        // Découper certaines dépendances en chunks séparés
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom', 'recharts', 'styled-components'],  // Ajoute tes bibliothèques lourdes ici
+        },
       },
     },
-    rollupOptions: {
-      onwarn(warning, warn) {
-        if (warning.code === 'MODULE_LEVEL_DIRECTIVE') {
-          return
-        }
-        warn(warning)
-      }
-    }
-  }
-})
+    // Ajuster la limite de taille des chunks
+    chunkSizeWarningLimit: 1000,  // Fixe la limite à 1 Mo (1 000 Ko)
+  },
+});
