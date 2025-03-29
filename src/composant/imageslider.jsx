@@ -1,13 +1,13 @@
+// src/components/ImageSlider.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import '../style/ims.css';
-import videoFile from '../assets/Video/Firefly Vidéo promotionnelle dynamique et moderne pour Foot Space Réservé, une application de réserv (1).mp4';
+import heroImage from '../assets/images/ChatGPT Image 29 mars 2025, 15_19_02.png'; // Chemin simplifié sans espaces
 import { Link } from "react-router-dom";
 
 const ImageSlider = () => {
   const [text, setText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
-  const videoRef = useRef(null);
   const lcpElementRef = useRef(null);
 
   const texts = [
@@ -18,32 +18,15 @@ const ImageSlider = () => {
     "Profitez des interfaces fluides.",
   ];
 
-  // Optimize video loading and LCP element rendering
+  // Optimisation du rendu
   useEffect(() => {
     if (lcpElementRef.current) {
       lcpElementRef.current.style.willChange = 'contents';
       lcpElementRef.current.style.opacity = 1;
     }
-
-    const video = videoRef.current;
-    video.muted = true;
-    video.loop = true;
-    video.playsInline = true;
-    video.preload = "metadata";
-
-    const handleCanPlay = () => {
-      video.play().catch(e => console.log("Autoplay blocked:", e));
-    };
-
-    video.addEventListener('canplay', handleCanPlay, { once: true });
-    video.load();
-
-    return () => {
-      video.removeEventListener('canplay', handleCanPlay);
-    };
   }, []);
 
-  // Typewriter effect
+  // Effet machine à écrire
   useEffect(() => {
     const handleType = () => {
       const currentText = texts[loopNum % texts.length];
@@ -63,27 +46,26 @@ const ImageSlider = () => {
 
     const timer = setTimeout(handleType, isDeleting ? 75 : 150);
     return () => clearTimeout(timer);
-  }, [text, isDeleting, loopNum]);
+  }, [text, isDeleting, loopNum, texts]);
 
   return (
     <div className="homepage" id="home">
-      {/* Video background */}
+      {/* Fond d'écran avec image */}
       <div className="video-background">
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          aria-label="Vidéo de promotion de Foot Space Réservé"
-        >
-          <source src={videoFile} type="video/mp4" />
-        </video>
+        <img
+          src={heroImage}
+          alt="Promotion Foot Space Réservé"
+          className="background-image"
+          loading="eager"
+          onError={(e) => {
+            e.target.onerror = null; 
+            e.target.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'; // Image de repli
+          }}
+        />
         <div className="video-overlay"></div>
       </div>
 
-      {/* Main content */}
+      {/* Contenu principal */}
       <div className="content">
         <div className="textss">
           <h1>
