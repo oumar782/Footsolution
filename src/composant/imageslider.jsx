@@ -1,7 +1,7 @@
 // src/components/ImageSlider.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import '../style/ims.css';
-import heroImage from '../assets/images/ChatGPT Image 29 mars 2025, 15_19_02.png'; // Chemin simplifié sans espaces
+import images from "../../assets/images/chatgpt-image.png";
 import { Link } from "react-router-dom";
 
 const ImageSlider = () => {
@@ -53,7 +53,7 @@ const ImageSlider = () => {
       {/* Fond d'écran avec image */}
       <div className="video-background">
         <img
-          src={heroImage}
+          src={images}
           alt="Promotion Foot Space Réservé"
           className="background-image"
           loading="eager"
