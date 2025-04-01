@@ -1,9 +1,8 @@
+// src/components/ImageSlider.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import '../style/ims.css';
+import heroImage from '../assets/images/ChatGPT Image 29 mars 2025, 15_19_02.png'; // Chemin simplifié sans espaces
 import { Link } from "react-router-dom";
-
-// Solution optimale pour Vercel
-const heroImage = '/images/chatgpt-image-29-03-2025.png';
 
 const ImageSlider = () => {
   const [text, setText] = useState('');
@@ -12,14 +11,14 @@ const ImageSlider = () => {
   const lcpElementRef = useRef(null);
 
   const texts = [
-    "Gérez mieux vos terrains.",
+    "Gérez vos mieux terrains.",
     "Simplifiez vos réservations.",
     "Gérez mieux vos créneaux.",
     "Maximisez vos revenus.",
     "Profitez des interfaces fluides.",
   ];
 
-  // Optimisation LCP
+  // Optimisation du rendu
   useEffect(() => {
     if (lcpElementRef.current) {
       lcpElementRef.current.style.willChange = 'contents';
@@ -51,22 +50,22 @@ const ImageSlider = () => {
 
   return (
     <div className="homepage" id="home">
+      {/* Fond d'écran avec image */}
       <div className="video-background">
         <img
           src={heroImage}
           alt="Promotion Foot Space Réservé"
           className="background-image"
           loading="eager"
-          width="1920"
-          height="1080"
           onError={(e) => {
-            e.target.onerror = null;
-            e.target.src = '/images/fallback-image.jpg';
+            e.target.onerror = null; 
+            e.target.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'; // Image de repli
           }}
         />
         <div className="video-overlay"></div>
       </div>
 
+      {/* Contenu principal */}
       <div className="content">
         <div className="textss">
           <h1>
@@ -74,7 +73,7 @@ const ImageSlider = () => {
             <span className="cursor">|</span>
           </h1>
           <p ref={lcpElementRef} className="lcp-optimized">
-            Révolutionnez la gestion de vos terrains de football avec FootSpace Solutions.
+            Révolutionnez la gestion de vos terrains de football avec FootSpace Solutions. Simplifiez la réservation, optimisez vos créneaux et maximisez vos revenus, tout en offrant à vos clients une expérience moderne et fluide.
           </p>
         </div>
         <div className="ok">
