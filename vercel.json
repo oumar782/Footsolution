@@ -6,14 +6,22 @@
       "use": "@vercel/static-build",
       "config": {
         "distDir": "dist",
-        "assetInclude": ["**/*.webp", "**/*.png", "**/*.jpg"]
+        "includeFiles": [
+          "public/images/**",
+          "src/assets/images/**"
+        ]
       }
     }
   ],
   "routes": [
     {
       "src": "/images/(.*)",
-      "dest": "/images/$1",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "src": "/assets/(.*)",
       "headers": {
         "Cache-Control": "public, max-age=31536000, immutable"
       }
