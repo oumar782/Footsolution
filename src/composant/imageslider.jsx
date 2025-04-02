@@ -1,7 +1,7 @@
 // src/components/ImageSlider.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import '../style/ims.css';
-import heroImage from '../assets/images/ChatGPT Image 29 mars 2025, 15_19_02.png'; // Chemin simplifié sans espaces
+import heroImage from '../assets/Images/ChatGPT Image 29 mars 2025, 15_19_02.png'; // Chemin simplifié sans espaces
 import { Link } from "react-router-dom";
 
 const ImageSlider = () => {
