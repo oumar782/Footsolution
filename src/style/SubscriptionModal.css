@@ -21,7 +21,7 @@
   
   /* Container principal - Design premium */
   .modal-container {
-    background: linear-gradient(145deg, #ffffff, #f8fafc);
+    background: linear-gradient(145deg, #f8fafc, #f6f2f2);
     border-radius: 16px;
     width: 90%;
     max-width: 580px;
@@ -77,9 +77,9 @@
   .modal-header h2 {
     font-size: 1.75rem;
     font-weight: 700;
-    color: #1e293b;
+    color: #1e3b22;
     margin-bottom: 1.5rem;
-    background: linear-gradient(90deg, #3b82f6, #10b981);
+    background: linear-gradient(90deg, #025811, #0616a7);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -88,29 +88,41 @@
   
   /* Résumé du plan - Carte moderne */
   .plan-summary {
-    background: white;
+    background: rgb(248, 246, 246);
     padding: 1.5rem;
     border-radius: 12px;
     margin-bottom: 1.5rem;
-    box-shadow: 
-      0 4px 6px -1px rgba(0, 0, 0, 0.05),
-      0 0 0 1px rgba(0, 0, 0, 0.03);
-    border: 1px solid rgba(0, 0, 0, 0.03);
+    box-shadow: 0 5px 15px rgba(4, 238, 82, 0.3);
+
+    border: 3px solid rgba(0, 0, 0, 0.03);
   }
   
   .plan-summary p {
     margin: 0.75rem 0;
-    color: #334155;
+    color: #1d099d;
     display: flex;
     justify-content: space-between;
-    font-size: 1.05rem;
+    font-size: 1.5rem;
   }
-  
+  .title-underline {
+    display: block;
+    width: 200px;
+    height: 4px;
+    background: linear-gradient(90deg, #04ee52, #021037);
+    margin: 1rem auto;
+    border-radius: 2px;
+  }
   .plan-summary strong {
     font-weight: 600;
-    color: #1e293b;
+    color: #026715;
   }
-  
+  .modalet {
+    font-size: 1rem;
+    font-style: italic;
+    color: #090a0a;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
   .savings-notice {
     color: #10b981;
     font-size: 0.95rem;
@@ -133,9 +145,9 @@
   }
   
   .form-section h3 {
-    font-size: 1.25rem;
+    font-size: 2rem;
     font-weight: 600;
-    color: #1e293b;
+    color: #024514;
     margin-bottom: 1.5rem;
     padding-bottom: 0.75rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -147,9 +159,9 @@
     position: absolute;
     bottom: -1px;
     left: 0;
-    width: 60px;
+    width: 260px;
     height: 2px;
-    background: linear-gradient(90deg, #3b82f6, #10b981);
+    background: linear-gradient(90deg, #035309, #0e0570);
     border-radius: 2px;
   }
   
@@ -172,24 +184,24 @@
     display: block;
     font-size: 0.95rem;
     font-weight: 500;
-    color: #334155;
+    color: #08090a;
     margin-bottom: 0.75rem;
   }
   
   .form-group input {
-    width: 100%;
+    width: 90%;
     padding: 1rem;
-    border: 1px solid #e2e8f0;
+    border: 2px solid #013109;
     border-radius: 10px;
     font-size: 1rem;
     transition: all 0.3s ease;
     background: white;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 1px 2px rgba(75, 146, 87, 0.03);
   }
   
   .form-group input:focus {
     outline: none;
-    border-color: #3b82f6;
+    border-color: #1e6508;
     box-shadow: 
       0 0 0 3px rgba(59, 130, 246, 0.1),
       0 2px 8px rgba(59, 130, 246, 0.15);
@@ -329,7 +341,7 @@
   }
   
   .submit-button {
-    background: linear-gradient(135deg, #3b82f6, #10b981);
+    background: linear-gradient(135deg, #023e18, #034524);
     color: white;
     border: none;
     box-shadow: 

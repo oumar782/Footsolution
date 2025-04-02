@@ -58,6 +58,10 @@ const SubscriptionModal = ({ plan, onClose, onSubmit }) => {
 
           <div className="modal-header">
             <h2>Souscription à l'offre {plan.name}</h2>
+            <div className="title-underline"></div>   
+            <p className="modalet" >
+            Un immense merci pour votre fidélité. Votre confiance est notre plus grande motivation, et nous nous engageons à continuer de vous accompagner avec excellence et innovation.
+            </p>
             <div className="plan-summary">
               <p><strong>Formule :</strong> {plan.name} ({plan.billingType === "annual" ? "Annuel" : "Mensuel"})</p>
               <p><strong>Prix :</strong> {plan.price}€/{plan.billingType === "annual" ? "an" : "mois"}</p>
